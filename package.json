@@ -8,6 +8,7 @@
     "@browserbasehq/sdk": "^2.0.0",
     "@browserbasehq/stagehand": "1.7.0-alpha-ba4ec335a5323648c6016cc480300fd58868311a",
     "eslint": "^9.17.0",
+    "playwright-core": "^1.49.1",
     "prettier": "^3.4.2",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
