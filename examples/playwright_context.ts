@@ -109,9 +109,6 @@ async function runSessionWithContextPersistence() {
       },
     });
     sessionId = newSession.id;
-    console.log(
-      `\n\n🅱️ View this session (without context persistence) live at https://browserbase.com/sessions/${sessionId}\n\n`
-    );
 
     // Step 5: Verify previous state
     console.log(`Reusing context ${contextId} during session ${sessionId}`);

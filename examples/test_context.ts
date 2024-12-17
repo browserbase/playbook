@@ -94,9 +94,6 @@ async function initStagehandWithContext(contextId: string, persist: boolean) {
     },
   });
   await stagehand.init();
-  console.log(
-    `\n\n🅱️ View this session live at https://browserbase.com/sessions/${stagehand.browserbaseSessionID}\n\n`
-  );
   return stagehand;
 }
 
@@ -142,6 +139,10 @@ async function main() {
     );
 
     await newStagehand.close();
+
+    console.log(
+      `\n\n🅱️ View this session recording at https://browserbase.com/sessions/${stagehand.browserbaseSessionID}\n\n`
+    );
 
     console.log("Context persistence test completed successfully!");
   } catch (error) {
