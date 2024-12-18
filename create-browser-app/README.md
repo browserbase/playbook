@@ -10,14 +10,10 @@ Stagehand is an SDK for automating browsers. It's built on top of [Playwright](h
 
 Get ready for a show-stopping development experience.
 
-```bash
-npx create-browser-app@latest my-browser-app
-```
-
-1. Git clone this repo:
+1. Run `npx create-browser-app` to create a new project.
 
    ```bash
-   git clone https://github.com/browserbase/quickstart-stagehand.git
+   npx create-browser-app@latest my-browser-app
    ```
 
 2. Copy `.env.example` to `.env` and update with your credentials:
@@ -41,33 +37,8 @@ npx create-browser-app@latest my-browser-app
    npm install
    ```
 
-4. Compile TypeScript in watch mode:
+4. Run the script:
 
    ```bash
-   tsc -w
+   npx tsx index.ts
    ```
-
-5. Run the file:
-
-   ```bash
-   node dist/index.js
-   ```
-
-6. Watch your script live or review the replay:
-
-- Live: Open the debugUrl - printed in the console.
-- Replay: Open the session Url - printed in the console.
-
-## Behind the Scenes
-
-Key features and components that make the magic happen.
-
-## Show Must Go On
-
-Troubleshooting tips and maintenance.
-
-## Break a Leg!
-
-Best practices and performance tips.
-
-## Setup Instructions
