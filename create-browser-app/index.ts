@@ -1,8 +1,28 @@
+/**
+ * 🤘 Welcome to Stagehand!
+ *
+ * TO RUN THIS PROJECT:
+ * ```
+ * npm install
+ * npm run start
+ * ```
+ *
+ * In this quickstart, we'll be automating a browser session to show you the power of Playwright and Stagehand's AI features.
+ *
+ * 1. Go to https://docs.browserbase.com/
+ * 2. Use `extract` to find information about the quickstart
+ * 3. Use `observe` to find the links under the 'Guides' section
+ * 4. Use Playwright to click the first link. If it fails, use `act` to gracefully fallback to Stagehand AI.
+ */
+
 import StagehandConfig from "./stagehand.config.ts";
 import { Stagehand } from "@browserbasehq/stagehand";
 import { z } from "zod";
 import chalk from "chalk";
 import boxen from "boxen";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 function announce(message: string, title?: string) {
   console.log(
@@ -96,7 +116,7 @@ async function main() {
   //   let Stagehand AI take over and complete the action.
   try {
     throw new Error(
-      "Comment out line 77 in index.ts to run the base Playwright code!"
+      "Comment out line 115 in index.ts to run the base Playwright code!"
     );
 
     // Wait for search button and click it
