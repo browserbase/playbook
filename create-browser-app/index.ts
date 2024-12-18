@@ -15,6 +15,27 @@ function announce(message: string, title?: string) {
 }
 
 async function main() {
+  console.log(
+    `
+	🤘 ${chalk.yellow("Welcome to Stagehand!")}
+
+	Stagehand is a tool that allows you to automate browser interactions.
+	In this quickstart, we'll be automating a browser session to show you the power of Playwright and Stagehand's AI features.
+
+	1. Go to ${chalk.blue("https://docs.browserbase.com/")}
+	2. Use ${chalk.green("extract")} to find information about the quickstart
+	3. Use ${chalk.green("observe")} to find the links under the 'Guides' section
+	4. Use Playwright to click the first link. If it fails, use ${chalk.green("act")} to gracefully fallback to Stagehand AI.
+
+	${chalk.bold(chalk.green("PRESS ENTER TO CONTINUE..."))}
+`
+  );
+
+  await new Promise((resolve) => {
+    process.stdin.once("data", () => {
+      resolve(undefined);
+    });
+  });
   const stagehand = new Stagehand({
     ...StagehandConfig,
   });

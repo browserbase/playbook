@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "npx tsx index.ts",
+    "start": "tsx index.ts",
     "postinstall": "npx playwright@latest install"
   },
   "dependencies": {
