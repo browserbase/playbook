@@ -4,10 +4,11 @@
   "scripts": {
     "build": "tsc",
     "start": "tsx index.ts",
-    "postinstall": "playwright install"
+    "postinstall": "playwright@latest install"
   },
   "dependencies": {
     "@browserbasehq/stagehand": "^1.7.0",
+    "@playwright/test": "^1.49.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
