@@ -1,4 +1,7 @@
 import type { ConstructorParams, LogLine } from "@browserbasehq/stagehand";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const StagehandConfig: ConstructorParams = {
   env:
