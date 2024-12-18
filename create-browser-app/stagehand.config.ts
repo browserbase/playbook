@@ -1,7 +1,10 @@
 import type { ConstructorParams, LogLine } from "@browserbasehq/stagehand";
 
 const StagehandConfig: ConstructorParams = {
-  env: "BROWSERBASE" /* Environment to run Stagehand in */,
+  env:
+    process.env.BROWSERBASE_API_KEY && process.env.BROWSERBASE_PROJECT_ID
+      ? "BROWSERBASE"
+      : "LOCAL",
   apiKey: process.env.BROWSERBASE_API_KEY /* API key for authentication */,
   projectId: process.env.BROWSERBASE_PROJECT_ID /* Project identifier */,
   debugDom: true /* Enable DOM debugging features */,

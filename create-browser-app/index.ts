@@ -113,6 +113,10 @@ async function main() {
         }
       )
     );
+  } else {
+    console.log(
+      "We hope you enjoyed using Stagehand locally! On Browserbase, you can bypass captchas, replay sessions, and access unparalleled debugging tools!\n10 free sessions: https://www.browserbase.com/sign-up\n\n"
+    );
   }
 
   console.log(
