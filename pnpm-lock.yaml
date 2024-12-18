@@ -12,8 +12,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       '@browserbasehq/stagehand':
-        specifier: 1.7.0-alpha-ba4ec335a5323648c6016cc480300fd58868311a
-        version: 1.7.0-alpha-ba4ec335a5323648c6016cc480300fd58868311a(@playwright/test@1.49.1)(deepmerge@4.3.1)(dotenv@16.4.7)(openai@4.76.3(zod@3.24.1))(zod@3.24.1)
+        specifier: ^1.7.0
+        version: 1.7.0(@playwright/test@1.49.1)(deepmerge@4.3.1)(dotenv@16.4.7)(openai@4.76.3(zod@3.24.1))(zod@3.24.1)
       eslint:
         specifier: ^9.17.0
         version: 9.17.0
@@ -29,6 +29,22 @@ importers:
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
+      zod:
+        specifier: ^3.24.1
+        version: 3.24.1
+
+  create-browser-app:
+    dependencies:
+      '@browserbasehq/stagehand':
+        specifier: ^1.7.0
+        version: 1.7.0(@playwright/test@1.49.1)(deepmerge@4.3.1)(dotenv@16.4.7)(openai@4.76.3(zod@3.24.1))(zod@3.24.1)
+      zod:
+        specifier: ^3.22.4
+        version: 3.24.1
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.7.2
 
 packages:
 
@@ -38,8 +54,8 @@ packages:
   '@browserbasehq/sdk@2.0.0':
     resolution: {integrity: sha512-BdPlZyn0dpXlL70gNK4acpqWIRB+edo2z0/GalQdWghRq8iQjySd9fVIF3evKH1p2wCYekZJRK6tm29YfXB67g==}
 
-  '@browserbasehq/stagehand@1.7.0-alpha-ba4ec335a5323648c6016cc480300fd58868311a':
-    resolution: {integrity: sha512-yNFjv8u2Bf6FPTdyQgyFDINSjm4shWnzwJTEc/3/6B8yde/SVTLWokidooLn81WP3hhOS7gk8MM3VGaNoSkkLw==}
+  '@browserbasehq/stagehand@1.7.0':
+    resolution: {integrity: sha512-QsobXC+E8yid7ZKpvTleXPCCotwxJRb7uhvtP3H6V9RGe31t0Il2FZyA2hsLdvvgkXDYa47F2rAuWMOpc6Ea0g==}
     peerDependencies:
       '@playwright/test': ^1.42.1
       deepmerge: ^4.3.1
@@ -843,7 +859,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@browserbasehq/stagehand@1.7.0-alpha-ba4ec335a5323648c6016cc480300fd58868311a(@playwright/test@1.49.1)(deepmerge@4.3.1)(dotenv@16.4.7)(openai@4.76.3(zod@3.24.1))(zod@3.24.1)':
+  '@browserbasehq/stagehand@1.7.0(@playwright/test@1.49.1)(deepmerge@4.3.1)(dotenv@16.4.7)(openai@4.76.3(zod@3.24.1))(zod@3.24.1)':
     dependencies:
       '@anthropic-ai/sdk': 0.27.3
       '@browserbasehq/sdk': 2.0.0
