@@ -15,7 +15,7 @@ async function main() {
     console.log(
       boxen(
         `View this session live in your browser: \n${chalk.blue(
-          `https://browserbase.com/session/${stagehand.browserbaseSessionID}`
+          `https://browserbase.com/sessions/${stagehand.browserbaseSessionID}`
         )}`,
         {
           title: "Browserbase",
@@ -28,24 +28,10 @@ async function main() {
 
   //   You can use the `page` instance to write any Playwright code
   //   For more info: https://playwright.dev/docs/pom
-  await page.goto("https://www.google.com");
+  await page.goto("https://stagehand.mintlify.app/");
 
-  //   In the event that your Playwright code fails, you can use the `act` method to
-  //   let Stagehand AI take over and complete the action.
-  try {
-    throw new Error("Comment me out to run the base Playwright code!");
-    await page.locator('textarea[name="q"]').click();
-    await page.locator('textarea[name="q"]').fill("Stagehand GitHub");
-    await page.keyboard.press("Enter");
-    await page.waitForLoadState("networkidle");
-  } catch {
-    await stagehand.act({
-      action: "type in 'Stagehand GitHub' in the search bar and hit enter",
-    });
-  }
-
-  const githubResult = await stagehand.extract({
-    instruction: "find the github link in the search results",
+  const description = await stagehand.extract({
+    instruction: "extract the title, description, and link of the quickstart",
     // Zod is a schema validation library similar to Pydantic in Python
     // For more information on Zod, visit: https://zod.dev/
     schema: z.object({
@@ -57,7 +43,11 @@ async function main() {
   console.log(
     boxen(
       chalk.green(`Extract`) +
-        `: The top result is ${githubResult.title}: ${githubResult.link}. ${githubResult.description}`,
+        `: The ${chalk.bgYellow(description.title)} is at: ${chalk.bgYellow(
+          chalk.blue(description.link)
+        )}` +
+        `\n\n${chalk.bgYellow(description.description)}` +
+        `\n\n${chalk.gray(JSON.stringify(description, null, 2))}`,
       {
         title: "Extract",
         padding: 1,
@@ -66,33 +56,77 @@ async function main() {
     )
   );
 
-  //   Click the first link in the search results to to the GitHub page
+  const observeResult = await stagehand.observe({
+    instruction: "Find the links under the 'Get Started' section",
+  });
+  console.log(
+    boxen(
+      chalk.green(`Get Started`) +
+        `: We can click:\n${observeResult
+          .map(
+            (r) =>
+              `"${chalk.yellow(r.description)}" -> ${chalk.gray(r.selector)}`
+          )
+          .join("\n")}`,
+      {
+        title: "Observe",
+        padding: 1,
+        margin: 3,
+      }
+    )
+  );
+
+  //   In the event that your Playwright code fails, you can use the `act` method to
+  //   let Stagehand AI take over and complete the action.
   try {
-    //   Stagehand's `observe` method returns a list of selectors that can be used to interact with the page
-    //   NOTE: you could also just do stagehand.act() to click the top result, but this is a good example of how to use observe
-    const observeResult = await stagehand.observe({
-      instruction: "Find the link to click to click the top result",
-    });
+    throw new Error("Comment me out to run the base Playwright code!");
+
+    // Wait for search button and click it
+    const quickStartSelector = `#content-area > div.relative.mt-8.prose.prose-gray.dark\:prose-invert > div > a:nth-child(1)`;
+    await page.waitForSelector(quickStartSelector);
+    await page.locator(quickStartSelector).click();
+    await page.waitForLoadState("networkidle");
     console.log(
       boxen(
-        chalk.green(`Observe`) +
-          `: We can click: ${observeResult.map((r) => r.selector).join(", ")}`,
+        `Clicked the quickstart link using base Playwright code. ${chalk.yellow(
+          "Uncomment line 82 in index.ts to have Stagehand take over!"
+        )}`,
         {
-          title: "Observe",
           padding: 1,
           margin: 3,
         }
       )
     );
-
-    // Click the selector at the top of the list
-    await page.locator(`${observeResult[0].selector}`).click();
-    await page.waitForLoadState("networkidle");
-  } catch {
-    await stagehand.act({
-      action: "click the first link in the search results",
-    });
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      console.log(
+        boxen(
+          `${chalk.red("Looks like an error occurred running Playwright. Let's have Stagehand take over!")} \n${chalk.gray(
+            e.message
+          )}`,
+          {
+            padding: 1,
+            margin: 3,
+          }
+        )
+      );
+      const actResult = await stagehand.act({
+        action: "Click the link to the quickstart",
+      });
+      console.log(
+        boxen(
+          `${chalk.green("Attempted to click the quickstart link using Stagehand AI.")} \n${chalk.gray(
+            JSON.stringify(actResult, null, 2)
+          )}`,
+          {
+            padding: 1,
+            margin: 3,
+          }
+        )
+      );
+    }
   }
+
   await stagehand.close();
 
   if (StagehandConfig.env === "BROWSERBASE") {
@@ -104,7 +138,7 @@ async function main() {
     console.log(
       boxen(
         `View this session recording in your browser: \n${chalk.blue(
-          `https://browserbase.com/session/${stagehand.browserbaseSessionID}`
+          `https://browserbase.com/sessions/${stagehand.browserbaseSessionID}`
         )}`,
         {
           title: "Browserbase",
