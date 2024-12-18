@@ -3,7 +3,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "tsx index.ts"
+    "start": "tsx index.ts",
+    "postinstall": "playwright install"
   },
   "dependencies": {
     "@browserbasehq/stagehand": "^1.7.0",
