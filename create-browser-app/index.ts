@@ -4,6 +4,16 @@ import { z } from "zod";
 import chalk from "chalk";
 import boxen from "boxen";
 
+function announce(message: string, title?: string) {
+  console.log(
+    boxen(message, {
+      padding: 1,
+      margin: 3,
+      title: title || "Stagehand",
+    })
+  );
+}
+
 async function main() {
   const stagehand = new Stagehand({
     ...StagehandConfig,
@@ -28,7 +38,7 @@ async function main() {
 
   //   You can use the `page` instance to write any Playwright code
   //   For more info: https://playwright.dev/docs/pom
-  await page.goto("https://stagehand.mintlify.app/");
+  await page.goto("https://docs.browserbase.com/");
 
   const description = await stagehand.extract({
     instruction: "extract the title, description, and link of the quickstart",
@@ -40,89 +50,61 @@ async function main() {
       description: z.string(),
     }),
   });
-  console.log(
-    boxen(
-      chalk.green(`Extract`) +
-        `: The ${chalk.bgYellow(description.title)} is at: ${chalk.bgYellow(
-          chalk.blue(description.link)
-        )}` +
-        `\n\n${chalk.bgYellow(description.description)}` +
-        `\n\n${chalk.gray(JSON.stringify(description, null, 2))}`,
-      {
-        title: "Extract",
-        padding: 1,
-        margin: 3,
-      }
-    )
+  announce(
+    `The ${chalk.bgYellow(description.title)} is at: ${chalk.bgYellow(
+      chalk.blue(description.link)
+    )}` +
+      `\n\n${chalk.bgYellow(description.description)}` +
+      `\n\n${chalk.gray(JSON.stringify(description, null, 2))}`,
+    "Extract"
   );
 
   const observeResult = await stagehand.observe({
-    instruction: "Find the links under the 'Get Started' section",
+    instruction: "Find the links under the 'Guides' section",
   });
-  console.log(
-    boxen(
-      chalk.green(`Get Started`) +
-        `: We can click:\n${observeResult
-          .map(
-            (r) =>
-              `"${chalk.yellow(r.description)}" -> ${chalk.gray(r.selector)}`
-          )
-          .join("\n")}`,
-      {
-        title: "Observe",
-        padding: 1,
-        margin: 3,
-      }
-    )
+  announce(
+    `${chalk.green("Observe:")} We can click:\n${observeResult
+      .map(
+        (r) => `"${chalk.yellow(r.description)}" -> ${chalk.gray(r.selector)}`
+      )
+      .join("\n")}`,
+    "Observe"
   );
 
   //   In the event that your Playwright code fails, you can use the `act` method to
   //   let Stagehand AI take over and complete the action.
   try {
-    throw new Error("Comment me out to run the base Playwright code!");
+    throw new Error(
+      "Comment out line 77 in index.ts to run the base Playwright code!"
+    );
 
     // Wait for search button and click it
     const quickStartSelector = `#content-area > div.relative.mt-8.prose.prose-gray.dark\:prose-invert > div > a:nth-child(1)`;
     await page.waitForSelector(quickStartSelector);
     await page.locator(quickStartSelector).click();
     await page.waitForLoadState("networkidle");
-    console.log(
-      boxen(
-        `Clicked the quickstart link using base Playwright code. ${chalk.yellow(
-          "Uncomment line 82 in index.ts to have Stagehand take over!"
-        )}`,
-        {
-          padding: 1,
-          margin: 3,
-        }
-      )
+    announce(
+      `Clicked the quickstart link using base Playwright code. ${chalk.yellow(
+        "Uncomment line 82 in index.ts to have Stagehand take over!"
+      )}`
     );
   } catch (e: unknown) {
     if (e instanceof Error) {
-      console.log(
-        boxen(
-          `${chalk.red("Looks like an error occurred running Playwright. Let's have Stagehand take over!")} \n${chalk.gray(
-            e.message
-          )}`,
-          {
-            padding: 1,
-            margin: 3,
-          }
-        )
+      announce(
+        `${chalk.red("Looks like an error occurred running Playwright. Let's have Stagehand take over!")} \n${chalk.gray(
+          e.message
+        )}`,
+        "Playwright"
       );
+
       const actResult = await stagehand.act({
         action: "Click the link to the quickstart",
       });
-      console.log(
-        boxen(
-          `${chalk.green("Attempted to click the quickstart link using Stagehand AI.")} \n${chalk.gray(
-            JSON.stringify(actResult, null, 2)
-          )}`,
-          {
-            padding: 1,
-            margin: 3,
-          }
-        )
+      announce(
+        `${chalk.green("Clicked the quickstart link using Stagehand AI fallback.")} \n${chalk.gray(
+          actResult.message
+        )}`,
+        "Act"
       );
     }
   }
