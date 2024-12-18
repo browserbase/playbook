@@ -3,13 +3,16 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "tsx index.ts"
   },
   "dependencies": {
     "@browserbasehq/stagehand": "^1.7.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "boxen": "^8.0.1",
+    "chalk": "^5.3.0",
+    "tsx": "^4.19.2",
     "typescript": "^5.0.0"
   }
 }

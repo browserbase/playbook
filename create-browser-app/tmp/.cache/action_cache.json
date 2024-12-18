@@ -1,0 +1,553 @@
+{
+  "00abdcd5f760766acde0e9a6533c9040071ff5eb8b20b5dd26c7577434361c71": {
+    "data": {
+      "playwrightCommand": {
+        "method": "click",
+        "args": []
+      },
+      "componentString": "<a href=\"/browserbase/stagehand/graphs/contributors\">Contributors <span title=\"19\" data-view-component=\"true\" class=\"Counter ml-1\">19</span></a>",
+      "xpaths": [
+        "/html/body[1]/div[1]/div[4]/div[1]/main[1]/turbo-frame[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/h2[1]/a[1]",
+        "//html/body/div[1]/div[4]/div/main/turbo-frame/div/div/div/div/div[2]/div/div[5]/div/h2/a"
+      ],
+      "newStepString": "\n## Step: Clicked on the 'Contributors' link to view the list of contributors for the repository.\n  Element: <a class=\"Link--primary no-underline Link d-flex flex-items-center\" href=\"/browserbase/stagehand/graphs/contributors\" data-view-component=\"true\">Contributors\n  Action: click\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [],
+      "action": "click on the contributors"
+    },
+    "timestamp": 1734514611553,
+    "requestId": "inodhrtabb"
+  },
+  "052d330898ff47977dcd1ce1b3f1ee8e6b8c3cfc04ed544de2c851c5a3cee0ae": {
+    "data": {
+      "playwrightCommand": {
+        "method": "fill",
+        "args": [
+          "Stagehand GitHub"
+        ]
+      },
+      "componentString": "<textarea title=\"Search\" aria-label=\"Search\" placeholder=\"\" name=\"q\" role=\"combobox\"></textarea>",
+      "xpaths": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]",
+        "//*[@id='APjFqb']",
+        "//textarea[@role='combobox']"
+      ],
+      "newStepString": "\n## Step: Typed 'Stagehand GitHub' into the search bar.\n  Element: <textarea id=\"APjFqb\" class=\"gLFyf\" aria-label=\"Search\" aria-expanded=\"false\" aria-haspopup=\"false\" data-ved=\"0ahUKEwiFxNv5g7GKAxXxFjQIHWsGAjwQ39UDCAU\"></textarea>\n  Action: fill\n  Reasoning: To enter the search query into the search bar.\n",
+      "completed": false,
+      "previousSelectors": [],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734515021218,
+    "requestId": "ed67yxvbp14"
+  },
+  "eb7b163407133686e5470fd8deec67bb1c7d988b76a5e8f4c595aa51ebd7c551": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<textarea title=\"Search\" aria-label=\"Search\" placeholder=\"\" name=\"q\" role=\"combobox\"></textarea>",
+      "xpaths": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]",
+        "//*[@id='APjFqb']",
+        "//textarea[@role='combobox']"
+      ],
+      "newStepString": "## Step: Pressed 'Enter' key in the search bar to initiate the search for 'Stagehand GitHub'.\n  Element: <textarea id=\"APjFqb\" class=\"gLFyf\" aria-label=\"Search\" aria-expanded=\"true\" aria-haspopup=\"false\" data-ved=\"0ahUKEwiFxNv5g7GKAxXxFjQIHWsGAjwQ39UDCAU\"></textarea>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734515023733,
+    "requestId": "ed67yxvbp14"
+  },
+  "9a75f6758e7bca15b6c4991430e4a09acc58f0cb2b4bd3a62595676f21bc0686": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<textarea aria-label=\"Search\" placeholder=\"\" name=\"q\" role=\"combobox\">Stagehand GitHub</textarea>",
+      "xpaths": [
+        "/html/body[1]/span[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/textarea[1]",
+        "//*[@id='APjFqb']",
+        "//textarea[@role='combobox']"
+      ],
+      "newStepString": "## Step: Pressed 'Enter' on the search bar to execute the search for 'Stagehand GitHub'.\n  Element: <textarea id=\"APjFqb\" class=\"gLFyf\" aria-label=\"Search\" aria-expanded=\"false\" aria-haspopup=\"false\" value=\"Stagehand GitHub\" data-ved=\"0ahUKEwjz9-KnhLGKAxUWIDQIHRNSIroQ39UDCAw\">Stagehand GitHub</textarea>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734515112475,
+    "requestId": "ysooby6sm1h"
+  },
+  "a2b9c48ac205ff8f51bbf1b3172126548526fa04ed4d59b879edd75086e40cf3": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to execute the search query.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwio9YTnhLGKAxXgJTQIHTpSBcoQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734515244914,
+    "requestId": "3dfemxx4pbe"
+  },
+  "8523d202bba8fd3d96eb248aecc505731a739d82cb1ed9d3c6bcd73d6c17f28b": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<textarea aria-label=\"Search\" placeholder=\"\" name=\"q\" role=\"combobox\">Stagehand GitHub</textarea>",
+      "xpaths": [
+        "/html/body[1]/span[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/textarea[1]",
+        "//*[@id='APjFqb']",
+        "//textarea[@role='combobox']"
+      ],
+      "newStepString": "## Step: Pressed 'Enter' in the search bar to execute the search for 'Stagehand GitHub'.\n  Element: <textarea id=\"APjFqb\" class=\"gLFyf\" aria-label=\"Search\" aria-expanded=\"false\" aria-haspopup=\"false\" value=\"Stagehand GitHub\" data-ved=\"0ahUKEwi8t-zehrGKAxUxADQIHXQ9KuAQ39UDCAw\">Stagehand GitHub</textarea>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734515764545,
+    "requestId": "f99ixlln1vf"
+  },
+  "6110cedaa1c298248ac7ad38f3c43cb28a4caa93c782e89a0fb775bcc60aeb45": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to submit the search query 'Stagehand GitHub'.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwigxdSMh7GKAxWBCjQIHUxLA4EQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734515861243,
+    "requestId": "3jcdwwacdv"
+  },
+  "4e1b09ed12eb5a0efa944023539ac7f71fda13c576c374d43f1aa58a10e600e2": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to submit the search query.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwia-_v8h7GKAxU2CTQIHetmJvIQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734516095817,
+    "requestId": "lm69g7ny42o"
+  },
+  "327b76c01a396cdb345c05c07e499072741ab9687ce14cc3c5c336f8b3161a39": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to submit the search query 'Stagehand GitHub'.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwiZmOyijLGKAxVuIjQIHTB7DVkQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734517249394,
+    "requestId": "frmovn3gfxf"
+  },
+  "f5dd0fdfc18437278b4899c3736552ea6ac37f5503418b1c17d32de3c56b1129": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed 'Enter' on the search button to execute the search query 'Stagehand GitHub'.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwj67OWejbGKAxVaCjQIHYYGChgQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734517509356,
+    "requestId": "8s03ltepn3k"
+  },
+  "8ea2f24847298e776cb468d9dd045e8a53b0e38cd0946c89e11fa9b5a7fe36cd": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<textarea aria-label=\"Search\" placeholder=\"\" name=\"q\" role=\"combobox\">Stagehand GitHub</textarea>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/textarea[1]",
+        "//*[@id='APjFqb']",
+        "//textarea[@role='combobox']"
+      ],
+      "newStepString": "## Step: Pressed 'Enter' key in the search bar to execute the search query 'Stagehand GitHub'.\n  Element: <textarea id=\"APjFqb\" class=\"gLFyf\" aria-label=\"Search\" aria-expanded=\"false\" aria-haspopup=\"false\" value=\"Stagehand GitHub\" data-ved=\"0ahUKEwi2vJrAjbGKAxVUDjQIHa_7K1YQ39UDCAw\">Stagehand GitHub</textarea>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734517579216,
+    "requestId": "d5lgdl3zpwh"
+  },
+  "fdd51fdb15dda31f0700a334c269b5196dc17e1a9d343e2acb8354ebb0f8c939": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to submit the search query.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwic4dqAjrGKAxVEDzQIHVr3JcYQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734517714721,
+    "requestId": "eh1bamfk4f"
+  },
+  "1ee4bfabb51eead2754560e292c08e84eb99b74cb8dac425ae1f9235f51b73a7": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to submit the search query 'Stagehand GitHub'.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwjNiPecjrGKAxVRNzQIHWssBXsQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734517774122,
+    "requestId": "97f8vlvs2g9"
+  },
+  "0ad6505c2289decb0226607972d6d279ad06646972c6de1f2ee321503a3850e3": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed 'Enter' on the search button to execute the search query.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwjgqfSsjrGKAxUHIDQIHVCxGoAQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734517807544,
+    "requestId": "lo7goudkkkl"
+  },
+  "9f4a46ba65cfe037f5918327ade696255f527f9160840dbbb614992192667142": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed 'Enter' on the search button to execute the search query 'Stagehand GitHub'.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwi5_9DIjrGKAxW-ATQIHcJDFv8Q4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734517865461,
+    "requestId": "p7mbyjihr1"
+  },
+  "44633eb4155ae822615920be7e820ba7ad6aaf7d2682af00b1ff15d5f1f0b17b": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to submit the search query.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwiY0MW1j7GKAxWjFTQIHazUKy4Q4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734518093931,
+    "requestId": "3siwepde7dj"
+  },
+  "7ce73c9b999681b0391e511ef7ba2b18f11f5b7ac203723fd867c53db68cbe95": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to submit the search query.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwjN0ofZj7GKAxWMxuYEHWe6EcsQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734518168540,
+    "requestId": "y6o55csaxc"
+  },
+  "b935075853a8e932b380abb9ea57498628c738b8f886bd62ffc0828a340ce22e": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to submit the search query 'Stagehand GitHub'.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwi8iJfoj7GKAxU7DzQIHaAdJXYQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734518200670,
+    "requestId": "95ymhg66xrk"
+  },
+  "fa72df1795c11dbea79de75b7c26571adff542997f6fc4ed6b12ed9279806eb7": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to submit the search query.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwiS64_5j7GKAxUzJzQIHYz_OwkQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734518235941,
+    "requestId": "t4e8jx4zslo"
+  },
+  "fdf9e88787a91c4eb1e15187b493f5a8f6628f0a19d2b6f6f827f6a030d91897": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to submit the search query.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwiD2qeQkLGKAxWkJDQIHS2dLpAQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734518284709,
+    "requestId": "n313kcqrydh"
+  },
+  "4733dc523a6bcfceee044a2ef7b4c7e4a0122c410ab037dbee7be5ea27d84877": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to execute the search query 'Stagehand GitHub'.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwjDiOWjkLGKAxVjCTQIHewNDh8Q4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734518325202,
+    "requestId": "og2iuti56j"
+  },
+  "460c77e179b22dc297346f7f6ac2cedbffdd65f7e0542f667be3e5a11a17cd04": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to initiate the search after typing 'Stagehand GitHub' into the search bar.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwicpuXgkLGKAxW8MTQIHR3WBN8Q4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734518453198,
+    "requestId": "1y1k8elfryc"
+  },
+  "26d4da6ac8f3b67ff2e7250b9c5926a81a57dbee36f055a1b0660c5e483e281b": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to submit the search query.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwinm-rekbGKAxX6HDQIHXMgNsgQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734518717701,
+    "requestId": "ubvofp4d1j"
+  },
+  "42025654da3b2207e2fcfead70f944b2ae563d6c4f2a9182c80025e7f9a2aef7": {
+    "data": {
+      "playwrightCommand": {
+        "method": "press",
+        "args": [
+          "Enter"
+        ]
+      },
+      "componentString": "<button aria-label=\"Search\" type=\"submit\"> <div class=\"zgAlFc\"> <span class=\"KlpaXd z1asCe MZy1Rb\"><svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"></path></svg></span> </div> </button>",
+      "xpaths": [
+        "/html/body[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]",
+        "//button[@type='submit']"
+      ],
+      "newStepString": "## Step: Pressed the 'Enter' key to initiate the search for 'Stagehand GitHub'.\n  Element: <button class=\"HZVG1b Tg7LZd\" aria-label=\"Search\" type=\"submit\" data-ved=\"0ahUKEwjL657CkrGKAxVUAzQIHf0QHbUQ4dUDCBA\"></button>\n  Action: press\n  Reasoning: undefined\n",
+      "completed": true,
+      "previousSelectors": [
+        "/html/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "action": "type in 'Stagehand GitHub' in the search bar and hit enter"
+    },
+    "timestamp": 1734518925796,
+    "requestId": "stesjvnwy2"
+  }
+}

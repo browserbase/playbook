@@ -1,43 +1,127 @@
+import StagehandConfig from "./stagehand.config.ts";
 import { Stagehand } from "@browserbasehq/stagehand";
 import { z } from "zod";
+import chalk from "chalk";
+import boxen from "boxen";
 
 async function main() {
-  // Initialize Stagehand
   const stagehand = new Stagehand({
-    env: "BROWSERBASE",
-    enableCaching: true,
+    ...StagehandConfig,
   });
+  await stagehand.init();
+  const page = stagehand.page;
 
-  // Initialize the session and get the debugUrl
-  const { debugUrl, sessionUrl } = await stagehand.init();
+  if (StagehandConfig.env === "BROWSERBASE") {
+    console.log(
+      boxen(
+        `View this session live in your browser: \n${chalk.blue(
+          `https://browserbase.com/session/${stagehand.browserbaseSessionID}`
+        )}`,
+        {
+          title: "Browserbase",
+          padding: 1,
+          margin: 3,
+        }
+      )
+    );
+  }
 
-  console.log("🚀 Debug View:", debugUrl);
+  //   You can use the `page` instance to write any Playwright code
+  //   For more info: https://playwright.dev/docs/pom
+  await page.goto("https://www.google.com");
 
-  // Navigate to the GitHub repository
-  await stagehand.page.goto("https://github.com/browserbase/stagehand");
+  //   In the event that your Playwright code fails, you can use the `act` method to
+  //   let Stagehand AI take over and complete the action.
+  try {
+    throw new Error("Comment me out to run the base Playwright code!");
+    await page.locator('textarea[name="q"]').click();
+    await page.locator('textarea[name="q"]').fill("Stagehand GitHub");
+    await page.keyboard.press("Enter");
+    await page.waitForLoadState("networkidle");
+  } catch {
+    await stagehand.act({
+      action: "type in 'Stagehand GitHub' in the search bar and hit enter",
+    });
+  }
 
-  // Click on the contributors link
-  await stagehand.act({ action: "click on the contributors" });
-  
-  // Extract the top contributor
-  const contributor = await stagehand.extract({
-    instruction: "extract the top contributor",
+  const githubResult = await stagehand.extract({
+    instruction: "find the github link in the search results",
+    // Zod is a schema validation library similar to Pydantic in Python
+    // For more information on Zod, visit: https://zod.dev/
     schema: z.object({
-      username: z.string(),
-      url: z.string(),
+      title: z.string(),
+      link: z.string(),
+      description: z.string(),
     }),
   });
+  console.log(
+    boxen(
+      chalk.green(`Extract`) +
+        `: The top result is ${githubResult.title}: ${githubResult.link}. ${githubResult.description}`,
+      {
+        title: "Extract",
+        padding: 1,
+        margin: 3,
+      }
+    )
+  );
 
-  console.log({ contributor });
+  //   Click the first link in the search results to to the GitHub page
+  try {
+    //   Stagehand's `observe` method returns a list of selectors that can be used to interact with the page
+    //   NOTE: you could also just do stagehand.act() to click the top result, but this is a good example of how to use observe
+    const observeResult = await stagehand.observe({
+      instruction: "Find the link to click to click the top result",
+    });
+    console.log(
+      boxen(
+        chalk.green(`Observe`) +
+          `: We can click: ${observeResult.map((r) => r.selector).join(", ")}`,
+        {
+          title: "Observe",
+          padding: 1,
+          margin: 3,
+        }
+      )
+    );
 
-  // Close the session
+    // Click the selector at the top of the list
+    await page.locator(`${observeResult[0].selector}`).click();
+    await page.waitForLoadState("networkidle");
+  } catch {
+    await stagehand.act({
+      action: "click the first link in the search results",
+    });
+  }
   await stagehand.close();
 
-  // Log the favorite contributor
-  console.log(`Our favorite contributor is ${contributor.username}`);
+  if (StagehandConfig.env === "BROWSERBASE") {
+    console.log(
+      "Session completed. Waiting for 10 seconds to see the logs and recording..."
+    );
+    //   Wait for 10 seconds to see the logs
+    await new Promise((resolve) => setTimeout(resolve, 10000));
+    console.log(
+      boxen(
+        `View this session recording in your browser: \n${chalk.blue(
+          `https://browserbase.com/session/${stagehand.browserbaseSessionID}`
+        )}`,
+        {
+          title: "Browserbase",
+          padding: 1,
+          margin: 3,
+        }
+      )
+    );
+  }
 
-  // view the session replay
-  console.log("🚀 Session Replay:", sessionUrl);
+  console.log(
+    `🤘 Thanks for using Stagehand! Create an issue if you have any feedback: ${chalk.blue(
+      "https://github.com/browserbase/stagehand/issues/new"
+    )}\n`
+  );
 }
 
-main().catch(console.error);
+(async () => {
+  await main().catch(console.error);
+})();

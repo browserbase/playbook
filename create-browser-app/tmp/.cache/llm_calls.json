@@ -1,0 +1,1903 @@
+{
+  "a0f335e6bf41b2b7c4ea5a37133b0412a6aa04d8c33db35283f40c2651fdcf49": {
+    "data": {
+      "id": "chatcmpl-Afkm01CpeEz2nnQ4DOwjeko4fIdyQ",
+      "object": "chat.completion",
+      "created": 1734514608,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_LCgKkPgUkmYj9zVOm2drKnGN",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"click\",\"element\":312,\"args\":[],\"step\":\"Clicked on the 'Contributors' link to view the list of contributors for the repository.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 11448,
+        "completion_tokens": 45,
+        "total_tokens": 11493,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_a79d8dac1f"
+    },
+    "timestamp": 1734514609520,
+    "requestId": "inodhrtabb"
+  },
+  "78867773479164f965fae0f47661654fcdc3166550be265858789ed39cf5057d": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734514617751,
+    "requestId": "inodhrtabb"
+  },
+  "13e7cfabe8b90933b7393a559fbb02999953eb621cd47f1f4dc63ad6a067bc0d": {
+    "data": {
+      "username": "jeremypress",
+      "url": "/jeremypress"
+    },
+    "timestamp": 1734514619339,
+    "requestId": "vfh5hcy5qxk"
+  },
+  "51c88a11647e709e3eedd9d59c67481a274c5b44eb938f0a296d30572ccf788e": {
+    "data": {
+      "username": "jeremypress",
+      "url": "/jeremypress"
+    },
+    "timestamp": 1734514620071,
+    "requestId": "vfh5hcy5qxk"
+  },
+  "d8cad5b9c922b734313b685f291f6ea9e25af1dc460625a83f3522827e835e17": {
+    "data": {
+      "progress": "The top contributor has been identified as 'jeremypress'.",
+      "completed": true
+    },
+    "timestamp": 1734514620890,
+    "requestId": "vfh5hcy5qxk"
+  },
+  "d2ede25c18e0d6f37c3a584c00fe04cd8cfa6e8fa8751db355b6182d2081ae1d": {
+    "data": {
+      "id": "chatcmpl-AfksZu475isOw0qNFoIMxE6hjQ7vw",
+      "object": "chat.completion",
+      "created": 1734515015,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_qzY9ncNhQC5OpENy4wxMiCCb",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\": \"fill\", \"element\": 9, \"args\": [\"Stagehand GitHub\"], \"step\": \"Typed 'Stagehand GitHub' into the search bar.\", \"why\": \"To enter the search query into the search bar.\", \"completed\": false}"
+                }
+              },
+              {
+                "id": "call_uwKrjjg5iswUZHbcF5MihazO",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\": \"press\", \"element\": 9, \"args\": [\"Enter\"], \"step\": \"Pressed 'Enter' to initiate the search.\", \"why\": \"To execute the search for 'Stagehand GitHub'.\", \"completed\": true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1596,
+        "completion_tokens": 124,
+        "total_tokens": 1720,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_a79d8dac1f"
+    },
+    "timestamp": 1734515018179,
+    "requestId": "ed67yxvbp14"
+  },
+  "c860877225b71030778576edcafe8c812bd13ab6dd35c3ecd1b4d2db093d20ab": {
+    "data": {
+      "id": "chatcmpl-AfksgQ5jJFao3zceWp4C0sPU8RF5r",
+      "object": "chat.completion",
+      "created": 1734515022,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_D0hiBcFK3wzMkyjcirMgSMJg",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":9,\"args\":[\"Enter\"],\"step\":\"Pressed 'Enter' key in the search bar to initiate the search for 'Stagehand GitHub'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 7021,
+        "completion_tokens": 50,
+        "total_tokens": 7071,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_a79d8dac1f"
+    },
+    "timestamp": 1734515023473,
+    "requestId": "ed67yxvbp14"
+  },
+  "f643d6f067ba2c71776b406aa023c6cd8cda32fa878bcbc494e6a8376d4d3dca": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734515026197,
+    "requestId": "lkhcgorx0ug"
+  },
+  "b6fc56004c0981b691ab90d92af096d5ebe030144a0416edd795dfc6715cf049": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing tool that enhances user experience by automating repetitive tasks and providing intelligent suggestions. Explore the repository to learn more about its features and capabilities."
+    },
+    "timestamp": 1734515028566,
+    "requestId": "lkhcgorx0ug"
+  },
+  "c386ff981a8b79595c0a64be6484f3c0c2268714f376dc782e7a1b4ebecbaa43": {
+    "data": {
+      "progress": "The GitHub link has been successfully extracted from the search results.",
+      "completed": true
+    },
+    "timestamp": 1734515031090,
+    "requestId": "lkhcgorx0ug"
+  },
+  "dac8747fee5f57c27beccd43bbf970d3717d52c11a9b67d8a961db39608ebc10": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "This is the link to the top result for 'Stagehand GitHub' on the search page. It leads to the GitHub repository 'browserbase/stagehand'."
+        }
+      ]
+    },
+    "timestamp": 1734515032850,
+    "requestId": "fbn37gye94"
+  },
+  "37e03549e73a164c8da47a9be0b53da7d707305108fceab1f832a2a257b51f5f": {
+    "data": {
+      "id": "chatcmpl-Afku6xjNjko624MsGiOC8EssLqz0M",
+      "object": "chat.completion",
+      "created": 1734515110,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_WC5Ivr85he3MTEGVZgAc9AkO",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":67,\"args\":[\"Enter\"],\"step\":\"Pressed 'Enter' on the search bar to execute the search for 'Stagehand GitHub'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4368,
+        "completion_tokens": 49,
+        "total_tokens": 4417,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_a79d8dac1f"
+    },
+    "timestamp": 1734515111838,
+    "requestId": "ysooby6sm1h"
+  },
+  "dbf90f79f62f3706cb5bc882648bcb08f3553a601f26611c3be8f55456cf9cae": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734515117598,
+    "requestId": "ysooby6sm1h"
+  },
+  "ad01df020a237b482a3aa9434bbab9fb85e7925903465be99b725b0174affa5b": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734515118934,
+    "requestId": "lgzvxqtq4tk"
+  },
+  "195f415ffb15d257dccc39995299a92e254edf294a9d3cf04e093590a3d2809f": {
+    "data": {
+      "progress": "GitHub link successfully extracted: https://github.com/browserbase/stagehand",
+      "completed": true
+    },
+    "timestamp": 1734518933047,
+    "requestId": "9sok78wxsx6"
+  },
+  "53a3728c0d4fd27af8d3c4f2a3946fdbae9f96db9724837f0f4dc16393937561": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to the top result, which is a GitHub repository for 'browserbase/stagehand'."
+        }
+      ]
+    },
+    "timestamp": 1734515121742,
+    "requestId": "swxwf2thzt"
+  },
+  "1600025a33dfb45f6e4f9ff3deee28eaf6e93c358526e515f5c2af57f0f622c6": {
+    "data": {
+      "id": "chatcmpl-AfkwFvdTeBxVzguTFN4VpZlB0Wjyx",
+      "object": "chat.completion",
+      "created": 1734515243,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_Sc87dulH2b5WKWW5jpj5LkMH",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":91,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to execute the search query.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4941,
+        "completion_tokens": 41,
+        "total_tokens": 4982,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734515243964,
+    "requestId": "3dfemxx4pbe"
+  },
+  "c08f25998b33b14f05c62af28141f73880d381a2f240d5df33bd65304162aacf": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734515249722,
+    "requestId": "3dfemxx4pbe"
+  },
+  "6a34ee0518ec8f9d902d3a6eb3931b5ac42977ad0cd482e9c44929ffa760eba8": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734515251040,
+    "requestId": "7evfpbx6e1c"
+  },
+  "d431ba1551685f7e256dd5757ca5856c7966c6729cbc8df561ace0a943d35d1d": {
+    "data": {
+      "progress": "The GitHub link has been successfully extracted from the search results.",
+      "completed": true
+    },
+    "timestamp": 1734518459591,
+    "requestId": "u8o98sjj85d"
+  },
+  "2148ed5fc1ae7bb2e163626176bd2e4f5bd549587acb66329909fb582835aed1": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to the top result, which is a GitHub repository for 'browserbase/stagehand'."
+        }
+      ]
+    },
+    "timestamp": 1734515254819,
+    "requestId": "eena7qe33da"
+  },
+  "df795870956a7a20bc07038301a4008e3ccf076d2da4982ab0a308834381b756": {
+    "data": {
+      "id": "chatcmpl-Afl4cbJgaMB4IIP98ZUCLESCoPMzU",
+      "object": "chat.completion",
+      "created": 1734515762,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_lQH3xNOexUFT5TYkVIHqgtMR",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":95,\"args\":[\"Enter\"],\"step\":\"Pressed 'Enter' in the search bar to execute the search for 'Stagehand GitHub'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4936,
+        "completion_tokens": 49,
+        "total_tokens": 4985,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734515763633,
+    "requestId": "f99ixlln1vf"
+  },
+  "e9581ea7f86b49bcb6377a59285e957229454b99446495ba1c06eeefcd0f0851": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734515769625,
+    "requestId": "f99ixlln1vf"
+  },
+  "67acdcd5bf2e0057bea21513b3b21324ab9616c3af92a62f6456024651b05b20": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734515771912,
+    "requestId": "7p11hlfm97x"
+  },
+  "9d5408c8797adfad106f328aae9af446c6425c85b327615d68ca9a934d9578ef": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to click for the top result is the first link in the search results, which is typically the most relevant or top-ranked result. In this case, it is the link to the GitHub repository for 'browserbase/stagehand'."
+        }
+      ]
+    },
+    "timestamp": 1734515775549,
+    "requestId": "twoffybogz"
+  },
+  "a75f3cbf8b67dcaf1510a11cba2018a8add5e96e2bfd00b2a4137730b75bab0e": {
+    "data": {
+      "id": "chatcmpl-Afl6Cb4uaahIPy7jlnwvxdz8gsaLQ",
+      "object": "chat.completion",
+      "created": 1734515860,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_oT5KNSK1DKBeIr49Q3FuWh2E",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":90,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to submit the search query 'Stagehand GitHub'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4881,
+        "completion_tokens": 47,
+        "total_tokens": 4928,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734515860792,
+    "requestId": "3jcdwwacdv"
+  },
+  "1a7495cd1f840ceb86532eebebbe2d5f5736605a34d91dc2676a695308b47fb7": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734515865484,
+    "requestId": "3jcdwwacdv"
+  },
+  "db27c600fc05069214f693540a7535a0fcb3e0809a3e9e701f391e6f49df46c3": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com"
+    },
+    "timestamp": 1734515867029,
+    "requestId": "aqdyh879u5"
+  },
+  "89c78f1003737853c3d6395250fa577026711c8797a4036a38e4736a3a264674": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing tool designed to enhance your browsing experience by automating repetitive tasks and providing intelligent suggestions. Explore the repository to learn more about its features and how it can assist you in your daily web activities."
+    },
+    "timestamp": 1734515869879,
+    "requestId": "aqdyh879u5"
+  },
+  "36a677b2993e7a0791e18dcbd5c657de9235c149fc22de730149fc4fb8ff8839": {
+    "data": {
+      "progress": "GitHub link successfully extracted: https://github.com/browserbase/stagehand",
+      "completed": true
+    },
+    "timestamp": 1734518291194,
+    "requestId": "kze2y589xc"
+  },
+  "da5c13cecc1a60c560827996efcc30428c7e904d8f05f1606518d2219e6d9912": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to the top result, which is a GitHub repository for 'browserbase/stagehand'."
+        }
+      ]
+    },
+    "timestamp": 1734515872252,
+    "requestId": "g5dm4c1il9t"
+  },
+  "7f6c3fea052d47affcc052e7bc1233b33fff5178ca034c61ce06982d4bdbf1e9": {
+    "data": {
+      "id": "chatcmpl-Afl9yPqAENoOWwrqT0FupE85aVMdI",
+      "object": "chat.completion",
+      "created": 1734516094,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_rEVrFq9N2fBNFt7NWCvhPoB5",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":100,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to submit the search query.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 5039,
+        "completion_tokens": 41,
+        "total_tokens": 5080,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734516095165,
+    "requestId": "lm69g7ny42o"
+  },
+  "2108565abdbc21b5630c29051c7c33b95067acdef5fcc3035f192eaa1fc4d957": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734516100315,
+    "requestId": "lm69g7ny42o"
+  },
+  "f7ebcc24894f68b8e2a4b08b6da78e17738b8ada58bb26756225ecebce71d0f2": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734516102468,
+    "requestId": "671l4irvsm4"
+  },
+  "0256547313a86d13389766698c3ebd268b1f7df880029e5a9a433c67f758781a": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to click for the top result, which is the GitHub repository for browserbase/stagehand."
+        }
+      ]
+    },
+    "timestamp": 1734516104971,
+    "requestId": "i58ap90mm6c"
+  },
+  "e1c7f1730d08e223d90e82defcef6a13f2c7fe1eadc0ff3b356b4b9eadd4af0f": {
+    "data": {
+      "id": "chatcmpl-AflSZBsgfCnD6loSSjnbZsFe9mfA1",
+      "object": "chat.completion",
+      "created": 1734517247,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_eAF0MZu5biH8doW26ooEy41B",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":79,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to submit the search query 'Stagehand GitHub'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4591,
+        "completion_tokens": 47,
+        "total_tokens": 4638,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734517248573,
+    "requestId": "frmovn3gfxf"
+  },
+  "2ff201d1a85901b10c2e4a4cd2efaa959b02eb2d422cf9c982798b66648df54a": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734517255000,
+    "requestId": "frmovn3gfxf"
+  },
+  "ab63f117b190e8ae77cea2390981f46a7447e0259db398cba0a8185b89a2c001": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734517256697,
+    "requestId": "0bi3848xs0qk"
+  },
+  "2224202bb139834745b0d670e8a7c207396d5af180cf2330a301b542d381694b": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to the top result, which is a GitHub repository for 'browserbase/stagehand'."
+        }
+      ]
+    },
+    "timestamp": 1734517258396,
+    "requestId": "s935vqcmj1m"
+  },
+  "78a759ba5b7e13a5b20cbf7c83203c5e953c21145892ba7a6c3e9915d76c527d": {
+    "data": {
+      "id": "chatcmpl-AflWlkLb56ls3OH0fcNiHaM5ggLa8",
+      "object": "chat.completion",
+      "created": 1734517507,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_JAkZuO6SFBoSXG6dxWkXM2PJ",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":87,\"args\":[\"Enter\"],\"step\":\"Pressed 'Enter' on the search button to execute the search query 'Stagehand GitHub'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4813,
+        "completion_tokens": 49,
+        "total_tokens": 4862,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734517508240,
+    "requestId": "8s03ltepn3k"
+  },
+  "de7e0e9f925812f1e8f9a08899f506da311c83847268ff22d0185779199f616d": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734517513341,
+    "requestId": "8s03ltepn3k"
+  },
+  "726152f928b115ab4fdf3b7d56d40086cf2eb28d20d5929144796d0125da8fd5": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com"
+    },
+    "timestamp": 1734517514908,
+    "requestId": "u3h7ji5aft8"
+  },
+  "0c970cb35ad79a5eb87b691fc8462c6d8d21893899270651a1fde176693af9f1": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to the top result, which is the GitHub repository for browserbase/stagehand."
+        }
+      ]
+    },
+    "timestamp": 1734517517339,
+    "requestId": "6ndppq4mkye"
+  },
+  "bf798a4360d3345b9414ee1251d6db38af12b716aa1e5c44109e3c58cbfd9657": {
+    "data": {
+      "id": "chatcmpl-AflXtd3AzSNLZsQUkSxlNs475NsWO",
+      "object": "chat.completion",
+      "created": 1734517577,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_cec6FjvlyC1Wc3xnKfZt6A1i",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":63,\"args\":[\"Enter\"],\"step\":\"Pressed 'Enter' key in the search bar to execute the search query 'Stagehand GitHub'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 3092,
+        "completion_tokens": 50,
+        "total_tokens": 3142,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734517578213,
+    "requestId": "d5lgdl3zpwh"
+  },
+  "26899243021d8f3080a41059c9a399b175fdc3ddafa969cb7605323c3f995976": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734517583798,
+    "requestId": "d5lgdl3zpwh"
+  },
+  "283eba6516eed1e6c7555ebd862dcbd2aebb9c3f3b36b375eaca5370323fee06": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734517585440,
+    "requestId": "q3ajke91b7g"
+  },
+  "ba6721f022d4256efe20e0ab0ed53ddc73d8414ff2ad200488fc4aa82ae9720f": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to click for the top result, which is the GitHub repository for browserbase/stagehand."
+        }
+      ]
+    },
+    "timestamp": 1734517587308,
+    "requestId": "dd3pzmcv2fq"
+  },
+  "7b392bff81df2c22341cffe58550068afcf589fa6fb4c72e3ae3f254c73c0983": {
+    "data": {
+      "id": "chatcmpl-Afla5tGDVQotfME49ROMFkSDPTIi7",
+      "object": "chat.completion",
+      "created": 1734517713,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_mYcPISRua1andMAR0AumzArh",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":105,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to submit the search query.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 5093,
+        "completion_tokens": 41,
+        "total_tokens": 5134,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734517713641,
+    "requestId": "eh1bamfk4f"
+  },
+  "8b9506adbaf07fd97a38b6178d7b2040381c7a34bd65b937f40ea872fa1bcb0d": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734517718942,
+    "requestId": "eh1bamfk4f"
+  },
+  "1c5eabe624b4b2fc0054b526bd3db2fc1c6cc70a0fe0df031dac63437bb12c44": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734517720400,
+    "requestId": "w7az3y5hqem"
+  },
+  "467340b5a286f7e69332ab51ceac46d1763ce4d1ceb79296b93a37b931044151": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to the top result for 'Stagehand GitHub' on GitHub."
+        }
+      ]
+    },
+    "timestamp": 1734517722117,
+    "requestId": "2w1jetze5ya"
+  },
+  "aaeae79cb4c0f9b064eeb8fd8046df83646a61f5be434d42afe1c050f8f30fbb": {
+    "data": {
+      "id": "chatcmpl-Aflb2dW71Ccmk30OmioIQVpLdUVGK",
+      "object": "chat.completion",
+      "created": 1734517772,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_u3UtlBxJCL31rq84pcSR1qiS",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":71,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to submit the search query 'Stagehand GitHub'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4400,
+        "completion_tokens": 47,
+        "total_tokens": 4447,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734517772816,
+    "requestId": "97f8vlvs2g9"
+  },
+  "78a4a94f4568a1f08e614c23bd307f0bd377086b258ca01d46b8601889513b92": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734517779259,
+    "requestId": "97f8vlvs2g9"
+  },
+  "959342dc6c88cebcb7887404fafa476e23a5ab28a30466958e9f06887f478743": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734517780691,
+    "requestId": "e4z4eq8hblo"
+  },
+  "6f5e41aab8a3c82d7dc2546bc32479680574cb4c234f0bea0c20a383ceb8721a": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "This is the link to the top result for 'Stagehand GitHub' on the page. It leads to the GitHub repository for browserbase/stagehand."
+        }
+      ]
+    },
+    "timestamp": 1734517782857,
+    "requestId": "eythimtsx7v"
+  },
+  "9f12a6bd9dc1eb9327983d9fb3b5ae59b60bd3b6089c70dbb23c1bd342d1e074": {
+    "data": {
+      "id": "chatcmpl-AflbZf3wwJY6I2T74zH1f4MZxvcaT",
+      "object": "chat.completion",
+      "created": 1734517805,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_XG8V5GimDF7jlFEfrqomLhXQ",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":70,\"args\":[\"Enter\"],\"step\":\"Pressed 'Enter' on the search button to execute the search query.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4400,
+        "completion_tokens": 43,
+        "total_tokens": 4443,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734517806491,
+    "requestId": "lo7goudkkkl"
+  },
+  "7c93a69e97a901b7c7b7a33c3db3caa545f4ba79957ef574119a90769fc94a54": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734517813436,
+    "requestId": "lo7goudkkkl"
+  },
+  "8fbe6efc3f80ee65c3e6fa22f301ac5457245d067c494dd5fd9906abcdaf8f6f": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734517814967,
+    "requestId": "cfs0oiqjslv"
+  },
+  "167b08a1abbe08ff149ccbe6d45fff9608859ca391f52834c026982acf033359": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "This is the link to the top result for 'Stagehand GitHub' on the page. It leads to the GitHub repository 'browserbase/stagehand'."
+        }
+      ]
+    },
+    "timestamp": 1734517820480,
+    "requestId": "iy4xwpr49z"
+  },
+  "630777146ba9de74a9009aae633f413eab635e64c21efa318301b46a54d2341c": {
+    "data": {
+      "id": "chatcmpl-AflcVO1UGZrEmRgKH3lhvEcAkDwUn",
+      "object": "chat.completion",
+      "created": 1734517863,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_hKHgyiq8A0XhjWJ1mVRYMDa0",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":79,\"args\":[\"Enter\"],\"step\":\"Pressed 'Enter' on the search button to execute the search query 'Stagehand GitHub'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4744,
+        "completion_tokens": 49,
+        "total_tokens": 4793,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734517864410,
+    "requestId": "p7mbyjihr1"
+  },
+  "747ac071bcaa4f21873ee328e682d2f033bbaa478947834cae09173a9f2ac7a2": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734517870742,
+    "requestId": "p7mbyjihr1"
+  },
+  "013205b758577809b4601146b2297e145bc89b710d5e3ad0163bb9e29cf8a831": {
+    "data": {
+      "title": "GitHub Link for Stagehand",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734517872067,
+    "requestId": "hslwgufio08"
+  },
+  "dc824f8993a9e4cac4a31b37f2c5f4a3a5ca125c82f65a8fcc87d8f9af011982": {
+    "data": {
+      "title": "GitHub Link for Stagehand",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734517873481,
+    "requestId": "hslwgufio08"
+  },
+  "271110460a444ddafe600373c58c72eb176c8b348b5b1db587e9036da6a6057e": {
+    "data": {
+      "progress": "The GitHub link for Stagehand has been successfully extracted.",
+      "completed": true
+    },
+    "timestamp": 1734517874140,
+    "requestId": "hslwgufio08"
+  },
+  "4ef04da66eb2a4e6d460a1c9a07d4b729c96e6d89817b5076effc399ba425c8d": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to the top result for 'Stagehand GitHub' which is a GitHub repository link."
+        }
+      ]
+    },
+    "timestamp": 1734517875324,
+    "requestId": "7w13z644wmm"
+  },
+  "29f0656d6fecc0e7f7be67c23b6f82a43e537d28796ad03db030a040b678a999": {
+    "data": {
+      "id": "chatcmpl-AflgCjdlpK5QDyeU3SkxLcyvFha97",
+      "object": "chat.completion",
+      "created": 1734518092,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_7XZmqCOG2bLrNW5TszjFrPa1",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":101,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to submit the search query.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 5080,
+        "completion_tokens": 41,
+        "total_tokens": 5121,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734518092927,
+    "requestId": "3siwepde7dj"
+  },
+  "e231e8d93fe871d90c7cdbba89d2bfc1ab7fadb64df44cf7431c66417812ba3f": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734518099758,
+    "requestId": "3siwepde7dj"
+  },
+  "91ae4d428b0ed340f15fe57e13e87ce7396bcb60914a9db6825da385434f3298": {
+    "data": {
+      "title": "GitHub Link Found",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734518101431,
+    "requestId": "vh795icez6j"
+  },
+  "df898426ce25cbe636d18eef39ff8dce8c8db318d7ff0b8c4993b38c876fc7d8": {
+    "data": {
+      "title": "GitHub Link Found",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing tool designed to enhance your browsing experience by automating tasks and providing intelligent suggestions. Explore the repository to learn more about its features and how it can assist you in your daily web activities."
+    },
+    "timestamp": 1734518102677,
+    "requestId": "vh795icez6j"
+  },
+  "c785fb5214e7f33f9b85dcce5b7553fca72d7a4e9b8cbc09135a0c59c58cc794": {
+    "data": {
+      "progress": "The GitHub link has been successfully extracted from the search results.",
+      "completed": true
+    },
+    "timestamp": 1734518103356,
+    "requestId": "vh795icez6j"
+  },
+  "b8d08caa5c595ae8fe28c9629ca6ea3a548d4d96b20dc7a4e0bd83b45e9ab6da": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to the top result, which is a GitHub repository for 'browserbase/stagehand'."
+        }
+      ]
+    },
+    "timestamp": 1734518104930,
+    "requestId": "vle37ndtbs"
+  },
+  "bdec72ea051319003192c4b5d052730768008101f138119d08825e7100153b30": {
+    "data": {
+      "id": "chatcmpl-AflhOQVAkvj697NWJiyakuAzVt2gQ",
+      "object": "chat.completion",
+      "created": 1734518166,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_sXLGYsYQDuObJfChgcO7x4t0",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":99,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to submit the search query.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4991,
+        "completion_tokens": 41,
+        "total_tokens": 5032,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734518167528,
+    "requestId": "y6o55csaxc"
+  },
+  "3ab2619f7f7f806b04f246c76f44603fcb6c09c6eedd5547733338ada78691ae": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734518173507,
+    "requestId": "y6o55csaxc"
+  },
+  "6b5095bb5021368782d49ef4bab2df06b87463d1ebe55de127a3bde4085b45d9": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734518174904,
+    "requestId": "e75vu1q4zsh"
+  },
+  "4b5a9ae1233e0e27f8b739ccc2c00fefe6d21d0f91eca0241bd98ef4651ba140": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to the top result, which is a GitHub repository for 'browserbase/stagehand'."
+        }
+      ]
+    },
+    "timestamp": 1734518176897,
+    "requestId": "mgnh7wx8fso"
+  },
+  "a152b0d598b2e5860a8a058357d66378d88c1f7f67abe23b0166c2580567e43e": {
+    "data": {
+      "id": "chatcmpl-AflhvHsVQUyISEwWN2I0CIHfS9AFO",
+      "object": "chat.completion",
+      "created": 1734518199,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_DbnVDh07dLmlxU5IVdsYyDzJ",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":106,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to submit the search query 'Stagehand GitHub'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 5255,
+        "completion_tokens": 47,
+        "total_tokens": 5302,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734518200144,
+    "requestId": "95ymhg66xrk"
+  },
+  "58a378012e67c07b51279a6b2a8667a8577230aa6e13851c72fec8dc0305a199": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734518205527,
+    "requestId": "95ymhg66xrk"
+  },
+  "f16d6ae21970130cabb2b15859fc78221aef030b0cf3db82393fad7cc19f2191": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com"
+    },
+    "timestamp": 1734518206829,
+    "requestId": "wxfphpid12h"
+  },
+  "e8ccf81a7586b00e346b669671ebde18fe899ebc93a2da102981a7ee48f1c1f1": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to click for the top result, which is the GitHub repository for browserbase/stagehand."
+        }
+      ]
+    },
+    "timestamp": 1734518208915,
+    "requestId": "hbg0nmjq9z8"
+  },
+  "31c053f98b52b9e46ceb6e595b0cb208cdb778c78fc6a6ff9d46d6d5a3ded6cc": {
+    "data": {
+      "id": "chatcmpl-AfliUhNi1NoR5KwT4gaCLlRYurqib",
+      "object": "chat.completion",
+      "created": 1734518234,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_1lMFbrrDgEDxEqgVvseixupr",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":142,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to submit the search query.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 5834,
+        "completion_tokens": 41,
+        "total_tokens": 5875,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734518234860,
+    "requestId": "t4e8jx4zslo"
+  },
+  "3340dc1a7ce32fa7caa46ec61978515b0de1affbc899a678bfe4ab1d1cb31a50": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734518241972,
+    "requestId": "t4e8jx4zslo"
+  },
+  "7514caf8bff8e56e5c6ff654a8c34ff204b6fc14616e3a6bf6483ce2a879839e": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734518243661,
+    "requestId": "lt4632nro4s"
+  },
+  "d25796e064f3b18dd57fd4ff2c58d0586dfaab62b4fcd893a49e703ef323425e": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "This is the link to the top result for 'Stagehand GitHub' on the page. It is an anchor tag with a href pointing to the GitHub repository 'browserbase/stagehand'."
+        }
+      ]
+    },
+    "timestamp": 1734518245869,
+    "requestId": "jen6eqvna4b"
+  },
+  "cb1e8ab2b794fa3f7bd9336033e902d291aae483055125458800dd009570ffd2": {
+    "data": {
+      "id": "chatcmpl-AfljGME1vVVnX2CAY0yU5qYMv0ssr",
+      "object": "chat.completion",
+      "created": 1734518282,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_Rd411LOyIYXXjoZPNpaup9Wj",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":142,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to submit the search query.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 5794,
+        "completion_tokens": 41,
+        "total_tokens": 5835,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734518283480,
+    "requestId": "n313kcqrydh"
+  },
+  "4d176cdd20c2efe94bf2d1310bc778a8cdc28563c26dd3228cc9da141b525a2e": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734518288931,
+    "requestId": "n313kcqrydh"
+  },
+  "47163436068dcd82e58c8f58b2567ad295953c5251dbb5d58e30dbb6ed2853de": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com"
+    },
+    "timestamp": 1734518290595,
+    "requestId": "kze2y589xc"
+  },
+  "a6872aeab90da4591327516fd8da3d50c10f4582edbb8c5580ad8e4c4ccbcc22": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to click for the top result, which is a GitHub repository for 'browserbase/stagehand'."
+        }
+      ]
+    },
+    "timestamp": 1734518292498,
+    "requestId": "hq9uis6bxy"
+  },
+  "aa7b295cfdb85b074ae18bbe0ad4da55cc1756f454fd1db38be19ea420f132e9": {
+    "data": {
+      "id": "chatcmpl-Afljv2BohFL1nejdxTeCYuui05wOa",
+      "object": "chat.completion",
+      "created": 1734518323,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_rdKbVevWSVnhEB4gJa5x99mg",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":148,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to execute the search query 'Stagehand GitHub'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 5826,
+        "completion_tokens": 47,
+        "total_tokens": 5873,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734518324281,
+    "requestId": "og2iuti56j"
+  },
+  "c75c3a1d6d5fc1fb0d8a10f33dd608793673b3c387fcebb1b7f0c47073d4235e": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734518330764,
+    "requestId": "og2iuti56j"
+  },
+  "d208a58cb1c0a0f7d9283f06fbc54dffe42d1f93b4a349fbf549f0b7f43206d9": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734518332412,
+    "requestId": "n44sqoc5g3"
+  },
+  "d4b2901d055852df87d6fad82945b750ffcccbb61a91dd10ab786dfda9939e4c": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to the top result, which is a GitHub repository for 'browserbase/stagehand'."
+        }
+      ]
+    },
+    "timestamp": 1734518334202,
+    "requestId": "e7ezc87thin"
+  },
+  "13d6ef6525b0419f6fd7c77109b6479f0126649c423469a9dec74c218aba6cbc": {
+    "data": {
+      "id": "chatcmpl-Afllz6U9tbV3AA11YkPsoAUXERKyQ",
+      "object": "chat.completion",
+      "created": 1734518451,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_awdluQ3UvaS1ePU0zeV54Cqg",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":151,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to initiate the search after typing 'Stagehand GitHub' into the search bar.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 6011,
+        "completion_tokens": 52,
+        "total_tokens": 6063,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734518452210,
+    "requestId": "1y1k8elfryc"
+  },
+  "c176448e96ad1cbf5063e26fc5ce381c9c3be92e26cef183d217a2cec7dbd7a0": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734518457352,
+    "requestId": "1y1k8elfryc"
+  },
+  "17ad8bfff54c7486c266ba419ff3b22f482ed67cc02536d02de680e40264e3f7": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734518459092,
+    "requestId": "u8o98sjj85d"
+  },
+  "64ed2ce0346c8d21ef46f732316f549e7171c44db0f4e6fa389b1b0e303e4deb": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to click for the top result, which is the GitHub repository for 'browserbase/stagehand'."
+        }
+      ]
+    },
+    "timestamp": 1734518460816,
+    "requestId": "l34vxdrm34p"
+  },
+  "7c065442cdb82587e14e8566bf975439bbb341af352bc441c00a6bbcd8bb2fd8": {
+    "data": {
+      "id": "chatcmpl-AflqFoYBJ97PQfNaTWQoteF6toGrI",
+      "object": "chat.completion",
+      "created": 1734518715,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_ygBfEoDztj1DMABiDSrtpx5i",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":151,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to submit the search query.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 5982,
+        "completion_tokens": 41,
+        "total_tokens": 6023,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734518717015,
+    "requestId": "ubvofp4d1j"
+  },
+  "fcf3af19b37f753999aee2c0ae4c72b98580c7056f49820bb07397f7db0ea5ec": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734518722035,
+    "requestId": "ubvofp4d1j"
+  },
+  "f9a5ee7ba8fa3c7f0b94daf4647a315472a0ca97a0b7875a4fb8a4da84973262": {
+    "data": {
+      "title": "GitHub Link",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734518723620,
+    "requestId": "f9lx5v3f9oo"
+  },
+  "1ca6e55c16e414267a2ce51e0c50ec9b92452348d44fe35ce1925acb67f937f5": {
+    "data": {
+      "title": "GitHub Link",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing tool that enhances your browsing experience by automating repetitive tasks and providing intelligent suggestions. - GitHub"
+    },
+    "timestamp": 1734518724486,
+    "requestId": "f9lx5v3f9oo"
+  },
+  "55d50b84541690e3e5bcc0fec92914dcb66297f4afff7b1d01b9c463329799f8": {
+    "data": {
+      "progress": "The GitHub link has been successfully extracted from the search results.",
+      "completed": true
+    },
+    "timestamp": 1734518725062,
+    "requestId": "f9lx5v3f9oo"
+  },
+  "7b8f5ad870bb2cbfa4ad73d7e8dfb254817a65b87873e0731f61c7f4d08448a1": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "The link to click for the top result, which is a GitHub repository for browserbase/stagehand."
+        }
+      ]
+    },
+    "timestamp": 1734518726615,
+    "requestId": "gwzktxte7al"
+  },
+  "3a7fe9b483e43af590b9477ee9485b77114268094e06bd7d4a0d86d565112f94": {
+    "data": {
+      "id": "chatcmpl-AfltcbPkb76VuHBBVjgHa7LowQDvK",
+      "object": "chat.completion",
+      "created": 1734518924,
+      "model": "gpt-4o-2024-08-06",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_ey5ERwMl00lL8Wc6u5j6PPJR",
+                "type": "function",
+                "function": {
+                  "name": "doAction",
+                  "arguments": "{\"method\":\"press\",\"element\":91,\"args\":[\"Enter\"],\"step\":\"Pressed the 'Enter' key to initiate the search for 'Stagehand GitHub'.\",\"completed\":true}"
+                }
+              }
+            ],
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 4925,
+        "completion_tokens": 47,
+        "total_tokens": 4972,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "system_fingerprint": "fp_9faba9f038"
+    },
+    "timestamp": 1734518924876,
+    "requestId": "stesjvnwy2"
+  },
+  "cce0f6fb341a3de8fc0ed0d8646fb589194bc60ddf436bc46a0b08eb052346f2": {
+    "data": {
+      "completed": true
+    },
+    "timestamp": 1734518930828,
+    "requestId": "stesjvnwy2"
+  },
+  "6c21dc39d1e590fbf607ec3faaebb0060a279434aa56f20f5e34e39ef82a3b0a": {
+    "data": {
+      "title": "GitHub Link Extraction",
+      "link": "https://github.com/browserbase/stagehand",
+      "description": "browserbase/stagehand: An AI web browsing ... - GitHubGitHubhttps://github.com › browserbase › stagehand"
+    },
+    "timestamp": 1734518932465,
+    "requestId": "9sok78wxsx6"
+  },
+  "c12781e184ed7dbb048e2aee234666fc5d5b347bcd6c35d5c3b9c58e171ba7a4": {
+    "data": {
+      "elements": [
+        {
+          "elementId": 26,
+          "description": "This is the link to the top result for 'Stagehand GitHub' on the search page. It directs to the GitHub repository for browserbase/stagehand."
+        }
+      ]
+    },
+    "timestamp": 1734518934699,
+    "requestId": "d6ikrev35ee"
+  }
+}
