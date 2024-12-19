@@ -1,0 +1,29 @@
+{
+  "name": "browserbase-quickstart-playwright",
+  "version": "0.0.1",
+  "description": "A template to use Playwright with Browserbase",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/browserbase/quickstart-playwright-js.git"
+  },
+  "private": "true",
+  "author": "Paul Klein <paul@browserbase.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/browserbase/quickstart-playwright-js/issues"
+  },
+  "homepage": "https://github.com/browserbase/quickstart-playwright-js#readme",
+  "dependencies": {
+    "@browserbasehq/sdk": "^2.0.0",
+    "dotenv": "^16.4.7",
+    "playwright-core": "^1.43.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7"
+  }
+}
