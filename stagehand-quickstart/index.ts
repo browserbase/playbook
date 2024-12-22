@@ -62,7 +62,7 @@ async function main() {
   await stagehand.init();
   const page = stagehand.page;
 
-  if (StagehandConfig.env === "BROWSERBASE") {
+  if (StagehandConfig.env === "BROWSERBASE" && stagehand.browserbaseSessionID) {
     console.log(
       boxen(
         `View this session live in your browser: \n${chalk.blue(
@@ -152,7 +152,7 @@ async function main() {
 
   await stagehand.close();
 
-  if (StagehandConfig.env === "BROWSERBASE") {
+  if (StagehandConfig.env === "BROWSERBASE" && stagehand.browserbaseSessionID) {
     console.log(
       "Session completed. Waiting for 10 seconds to see the logs and recording..."
     );
