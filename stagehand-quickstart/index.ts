@@ -116,7 +116,7 @@ async function main() {
   //   let Stagehand AI take over and complete the action.
   try {
     throw new Error(
-      "Comment out line 115 in index.ts to run the base Playwright code!"
+      "Comment out line 118 in index.ts to run the base Playwright code!"
     );
 
     // Wait for search button and click it
@@ -126,7 +126,7 @@ async function main() {
     await page.waitForLoadState("networkidle");
     announce(
       `Clicked the quickstart link using base Playwright code. ${chalk.yellow(
-        "Uncomment line 82 in index.ts to have Stagehand take over!"
+        "Uncomment line 118 in index.ts to have Stagehand take over!"
       )}`
     );
   } catch (e: unknown) {
