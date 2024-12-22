@@ -40,14 +40,20 @@ async function main() {
       `🤘 ${chalk.yellow("Welcome to Stagehand!")}`,
       "",
       "Stagehand is a tool that allows you to automate browser interactions.",
-      "In this quickstart, we'll be automating a browser session to show you the power of Playwright and Stagehand's AI features.",
+      "Watch as this demo automatically performs the following steps:",
       "",
-      `1. Go to ${chalk.blue("https://docs.browserbase.com/")}`,
-      `2. Use ${chalk.green("extract")} to find information about the quickstart`,
-      `3. Use ${chalk.green("observe")} to find the links under the 'Guides' section`,
-      `4. Use Playwright to click the first link. If it fails, use ${chalk.green("act")} to gracefully fallback to Stagehand AI.`,
+      `📍 Step 1: Automatically navigate to ${chalk.blue("https://docs.browserbase.com/")}`,
+      `📍 Step 2: AI will ${chalk.green(
+        "extract"
+      )} information about the quickstart`,
+      `📍 Step 3: AI will ${chalk.green(
+        "observe"
+      )} and identify links in the 'Guides' section`,
+      `📍 Step 4: Program will attempt to click the first link using Playwright, with ${chalk.green(
+        "act"
+      )} as an AI fallback`,
       "",
-      `${chalk.bold(chalk.green("PRESS ENTER TO CONTINUE..."))}`,
+      `${chalk.bold(chalk.green("PRESS ENTER TO START THE DEMO..."))}`,
     ].join("\n")
   );
 
@@ -132,9 +138,9 @@ async function main() {
   } catch (e: unknown) {
     if (e instanceof Error) {
       announce(
-        `${chalk.red("Looks like an error occurred running Playwright. Let's have Stagehand take over!")} \n${chalk.gray(
-          e.message
-        )}`,
+        `${chalk.red(
+          "Looks like an error occurred running Playwright. Let's have Stagehand take over!"
+        )} \n${chalk.gray(e.message)}`,
         "Playwright"
       );
 
@@ -142,9 +148,9 @@ async function main() {
         action: "Click the link to the quickstart",
       });
       announce(
-        `${chalk.green("Clicked the quickstart link using Stagehand AI fallback.")} \n${chalk.gray(
-          actResult.message
-        )}`,
+        `${chalk.green(
+          "Clicked the quickstart link using Stagehand AI fallback."
+        )} \n${chalk.gray(actResult.message)}`,
         "Act"
       );
     }
@@ -177,10 +183,39 @@ async function main() {
   }
 
   console.log(
-    `🤘 Thanks for using Stagehand! Create an issue if you have any feedback: ${chalk.blue(
+    [
+      "To recap, here are the steps we took:",
+      `1. We went to ${chalk.blue("https://docs.browserbase.com/")}`,
+      `---`,
+      `2. We used ${chalk.green(
+        "extract"
+      )} to find information about the quickstart`,
+      `The ${chalk.bgYellow(description.title)} is at: ${chalk.bgYellow(
+        chalk.blue(description.link)
+      )}` +
+        `\n\n${chalk.bgYellow(description.description)}` +
+        `\n\n${chalk.gray(JSON.stringify(description, null, 2))}`,
+      `---`,
+      `3. We used ${chalk.green(
+        "observe"
+      )} to find the links under the 'Guides' section and got the following results:`,
+      `\nWe could have clicked:\n${observeResult
+        .map(
+          (r) => `"${chalk.yellow(r.description)}" -> ${chalk.gray(r.selector)}`
+        )
+        .join("\n")}`,
+      `---`,
+      `4. We used Playwright to click the first link. If it failed, we used ${chalk.green(
+        "act"
+      )} to gracefully fallback to Stagehand AI.`,
+    ].join("\n\n")
+  );
+  console.log(
+    `\n🤘 Thanks for using Stagehand! Create an issue if you have any feedback: ${chalk.blue(
       "https://github.com/browserbase/stagehand/issues/new"
     )}\n`
   );
+  process.exit(0);
 }
 
 (async () => {
