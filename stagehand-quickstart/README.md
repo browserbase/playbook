@@ -40,5 +40,5 @@ Get ready for a show-stopping development experience.
 4. Run the script:
 
    ```bash
-   npx tsx index.ts
+   npm run start
    ```
