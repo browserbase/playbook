@@ -97,7 +97,7 @@ async function initStagehandWithContext(contextId: string, persist: boolean) {
   return stagehand;
 }
 
-async function main() {
+export async function runSessionWithContext() {
   try {
     // Step 1: Create a context
     const contextId = await createContext();
@@ -150,6 +150,3 @@ async function main() {
     process.exit(1);
   }
 }
-
-// Run the script
-main();

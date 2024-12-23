@@ -1,3 +1,4 @@
 node_modules/
 examples/node_modules/
 guides/node_modules/
+**/.DS_Store

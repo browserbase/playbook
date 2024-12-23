@@ -21,18 +21,9 @@ import { z } from "zod";
 import chalk from "chalk";
 import boxen from "boxen";
 import dotenv from "dotenv";
+import { announce } from "./utils.ts";
 
 dotenv.config();
-
-function announce(message: string, title?: string) {
-  console.log(
-    boxen(message, {
-      padding: 1,
-      margin: 3,
-      title: title || "Stagehand",
-    })
-  );
-}
 
 async function main() {
   console.log(
@@ -42,14 +33,14 @@ async function main() {
       "Stagehand is a tool that allows you to automate browser interactions.",
       "Watch as this demo automatically performs the following steps:",
       "",
-      `📍 Step 1: Automatically navigate to ${chalk.blue("https://docs.browserbase.com/")}`,
-      `📍 Step 2: AI will ${chalk.green(
+      `📍 Step 1: Stagehand will auto-navigate to ${chalk.blue("https://docs.browserbase.com/")}`,
+      `📍 Step 2: Stagehand will use AI to ${chalk.green(
         "extract"
       )} information about the quickstart`,
-      `📍 Step 3: AI will ${chalk.green(
+      `📍 Step 3: Stagehand will use AI to ${chalk.green(
         "observe"
       )} and identify links in the 'Guides' section`,
-      `📍 Step 4: Program will attempt to click the first link using Playwright, with ${chalk.green(
+      `📍 Step 4: Stagehand will attempt to click the first link using Playwright, with ${chalk.green(
         "act"
       )} as an AI fallback`,
       "",
