@@ -1,3 +1,25 @@
+/**
+ * TO USE THIS EXAMPLE: add this to your index.ts file
+ *
+ * ```ts
+ * import { runSessionWithContext } from "./path/to/examples/contexts.ts";
+ *
+ * async function main() {
+ *   await runSessionWithContext();
+ * }
+ *
+ * main();
+ * ```
+ *
+ * This example demonstrates how to use contexts in Browserbase.
+ *
+ * Contexts are a way to persist state between sessions.
+ *
+ * In this example, we will create a context, set a cookie on the page, and then validate that the cookie persists between pages.
+ *
+ * We will then create a new session with the same context, and validate that the cookie persists across sessions.
+ */
+
 import Browserbase from "@browserbasehq/sdk";
 import { Stagehand } from "@browserbasehq/stagehand";
 

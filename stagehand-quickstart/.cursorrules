@@ -1,0 +1,79 @@
+# Stagehand Project
+
+This is a project that uses Stagehand, which amplifies Playwright with `act`, `extract`, and `observe` added to the Page class.
+
+`Stagehand` is a class that provides config, a `StagehandPage` object via `stagehand.page`, and a `StagehandContext` object via `stagehand.context`.
+
+`StagehandPage` is a class that extends the Playwright `Page` class and adds `act`, `extract`, and `observe` methods.
+`StagehandContext` is a class that extends the Playwright `BrowserContext` class.
+
+Use the following rules to write code for this project.
+
+- When writing Playwright code, wrap it with Stagehand `act`
+- When writing code that needs to extract data from the page, use Stagehand `extract`
+- When writing code that needs to observe the page, use Stagehand `observe`
+
+## Initialize
+
+```typescript
+import { Stagehand } from "@browserbasehq/stagehand";
+import StagehandConfig from "./stagehand.config";
+
+const stagehand = new Stagehand(StagehandConfig);
+await stagehand.init();
+
+const page = stagehand.page; // Playwright Page
+const context = stagehand.context; // Playwright BrowserContext
+```
+
+## Act
+
+For example, if you are writing Playwright code, wrap it with Stagehand `act` like this:
+
+```typescript
+try {
+  await page.locator('button[name="Sign in"]').click();
+} catch (error) {
+  await page.act({
+    action: "click the sign in button",
+  });
+}
+```
+
+This is useful for handling errors or unexpected behavior in Playwright code that is vulnerable to unexpected DOM changes.
+
+## Extract
+
+If you are writing code that needs to extract data from the page, use Stagehand `extract` like this:
+
+```typescript
+const data = await page.extract({
+  instruction: "extract the sign in button text",
+  schema: z.object({
+    text: z.string(),
+  }),
+});
+```
+
+`schema` is a Zod schema that describes the data you want to extract. To extract an array, make sure to pass in a single object that contains the array, as follows:
+
+```typescript
+const data = await page.extract({
+  instruction: "extract the text inside all buttons",
+  schema: z.object({
+    text: z.array(z.string()),
+  }),
+});
+```
+
+## Observe
+
+If you are writing code that needs to observe the page, use Stagehand `observe` like this:
+
+```typescript
+const data = await page.observe({
+  instruction: "observe the page",
+});
+```
+
+This returns a list of XPaths and descriptions of the data you want to extract as `{ selector: string; description: string }[]`.
