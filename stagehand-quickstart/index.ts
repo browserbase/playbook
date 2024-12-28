@@ -78,7 +78,7 @@ async function main() {
   //   For more info: https://playwright.dev/docs/pom
   await page.goto("https://docs.browserbase.com/");
 
-  const description = await stagehand.extract({
+  const description = await page.extract({
     instruction: "extract the title, description, and link of the quickstart",
     // Zod is a schema validation library similar to Pydantic in Python
     // For more information on Zod, visit: https://zod.dev/
@@ -97,7 +97,7 @@ async function main() {
     "Extract"
   );
 
-  const observeResult = await stagehand.observe({
+  const observeResult = await page.observe({
     instruction: "Find the links under the 'Guides' section",
   });
   announce(
@@ -135,7 +135,7 @@ async function main() {
         "Playwright"
       );
 
-      const actResult = await stagehand.act({
+      const actResult = await page.act({
         action: "Click the link to the quickstart",
       });
       announce(
