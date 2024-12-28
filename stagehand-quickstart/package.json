@@ -4,7 +4,7 @@
   "scripts": {
     "build": "tsc",
     "start": "tsx index.ts",
-    "postinstall": "$(npm bin)/playwright@latest install"
+    "postinstall": "playwright install"
   },
   "dependencies": {
     "@browserbasehq/stagehand": "^1.7.0",
