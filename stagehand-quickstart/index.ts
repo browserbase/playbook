@@ -32,9 +32,9 @@ async function main({
   context,
   stagehand,
 }: {
-  page: Page;
-  context: BrowserContext;
-  stagehand: Stagehand;
+  page: Page; // Playwright Page with act, extract, and observe methods
+  context: BrowserContext; // Playwright BrowserContext
+  stagehand: Stagehand; // Stagehand instance
 }) {
   console.log(
     [
