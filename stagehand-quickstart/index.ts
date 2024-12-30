@@ -7,6 +7,8 @@
  * npm run start
  * ```
  *
+ * To edit config, see `stagehand.config.ts`
+ *
  * In this quickstart, we'll be automating a browser session to show you the power of Playwright and Stagehand's AI features.
  *
  * 1. Go to https://docs.browserbase.com/
@@ -16,7 +18,7 @@
  */
 
 import StagehandConfig from "./stagehand.config.ts";
-import { Stagehand } from "@browserbasehq/stagehand";
+import { Page, BrowserContext, Stagehand } from "@browserbasehq/stagehand";
 import { z } from "zod";
 import chalk from "chalk";
 import boxen from "boxen";
@@ -25,7 +27,15 @@ import { announce } from "./utils.ts";
 
 dotenv.config();
 
-async function main() {
+async function main({
+  page,
+  context,
+  stagehand,
+}: {
+  page: Page;
+  context: BrowserContext;
+  stagehand: Stagehand;
+}) {
   console.log(
     [
       `🤘 ${chalk.yellow("Welcome to Stagehand!")}`,
@@ -48,16 +58,12 @@ async function main() {
     ].join("\n")
   );
 
+  //   Wait for user to press enter
   await new Promise((resolve) => {
     process.stdin.once("data", () => {
       resolve(undefined);
     });
   });
-  const stagehand = new Stagehand({
-    ...StagehandConfig,
-  });
-  await stagehand.init();
-  const page = stagehand.page;
 
   if (StagehandConfig.env === "BROWSERBASE" && stagehand.browserbaseSessionID) {
     console.log(
@@ -126,27 +132,29 @@ async function main() {
         "Uncomment line 118 in index.ts to have Stagehand take over!"
       )}`
     );
-  } catch (e: unknown) {
-    if (e instanceof Error) {
-      announce(
-        `${chalk.red(
-          "Looks like an error occurred running Playwright. Let's have Stagehand take over!"
-        )} \n${chalk.gray(e.message)}`,
-        "Playwright"
-      );
-
-      const actResult = await page.act({
-        action: "Click the link to the quickstart",
-      });
-      announce(
-        `${chalk.green(
-          "Clicked the quickstart link using Stagehand AI fallback."
-        )} \n${chalk.gray(actResult.message)}`,
-        "Act"
-      );
+  } catch (e) {
+    if (!(e instanceof Error)) {
+      throw e;
     }
+    announce(
+      `${chalk.red(
+        "Looks like an error occurred running Playwright. Let's have Stagehand take over!"
+      )} \n${chalk.gray(e.message)}`,
+      "Playwright"
+    );
+
+    const actResult = await page.act({
+      action: "Click the link to the quickstart",
+    });
+    announce(
+      `${chalk.green(
+        "Clicked the quickstart link using Stagehand AI fallback."
+      )} \n${chalk.gray(actResult)}`,
+      "Act"
+    );
   }
 
+  //   Close the browser
   await stagehand.close();
 
   if (StagehandConfig.env === "BROWSERBASE" && stagehand.browserbaseSessionID) {
@@ -210,5 +218,16 @@ async function main() {
 }
 
 (async () => {
-  await main().catch(console.error);
-})();
+  const stagehand = new Stagehand({
+    ...StagehandConfig,
+  });
+  await stagehand.init();
+  const page = stagehand.page;
+  const context = stagehand.context;
+  await main({
+    page,
+    context,
+    stagehand,
+  });
+  await stagehand.close();
+})().catch(console.error);

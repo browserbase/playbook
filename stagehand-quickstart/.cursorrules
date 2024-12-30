@@ -4,8 +4,8 @@ This is a project that uses Stagehand, which amplifies Playwright with `act`, `e
 
 `Stagehand` is a class that provides config, a `StagehandPage` object via `stagehand.page`, and a `StagehandContext` object via `stagehand.context`.
 
-`StagehandPage` is a class that extends the Playwright `Page` class and adds `act`, `extract`, and `observe` methods.
-`StagehandContext` is a class that extends the Playwright `BrowserContext` class.
+`Page` is a class that extends the Playwright `Page` class and adds `act`, `extract`, and `observe` methods.
+`Context` is a class that extends the Playwright `BrowserContext` class.
 
 Use the following rules to write code for this project.
 
@@ -22,7 +22,7 @@ import StagehandConfig from "./stagehand.config";
 const stagehand = new Stagehand(StagehandConfig);
 await stagehand.init();
 
-const page = stagehand.page; // Playwright Page
+const page = stagehand.page; // Playwright Page with act, extract, and observe methods
 const context = stagehand.context; // Playwright BrowserContext
 ```
 
