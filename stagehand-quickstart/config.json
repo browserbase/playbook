@@ -1,16 +1,26 @@
 {
   "default": {
+    "index.ts": "index.ts",
     "blank.ts": "rm",
-    "persist-context.ts": "rm"
+    "persist-context.ts": "rm",
+    "sf-ticket-agent.ts": "rm"
   },
   "blank": {
     "index.ts": "rm",
     "blank.ts": "index.ts",
-    "persist-context.ts": "rm"
+    "persist-context.ts": "rm",
+    "sf-ticket-agent.ts": "rm"
   },
   "persist-context": {
     "index.ts": "rm",
     "blank.ts": "rm",
-    "persist-context.ts": "index.ts"
+    "persist-context.ts": "index.ts",
+    "sf-ticket-agent.ts": "rm"
+  },
+  "sf-ticket-agent": {
+    "index.ts": "rm",
+    "blank.ts": "rm",
+    "persist-context.ts": "rm",
+    "sf-ticket-agent.ts": "index.ts"
   }
 }
