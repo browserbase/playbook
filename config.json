@@ -1,0 +1,14 @@
+{
+  "default": {
+    "examples/quickstart.ts": "index.ts"
+  },
+  "blank": {
+    "examples/blank.ts": "index.ts"
+  },
+  "persist-context": {
+    "examples/persist-context.ts": "index.ts"
+  },
+  "sf-ticket-agent": {
+    "examples/sf-ticket-agent.ts": "index.ts"
+  }
+}

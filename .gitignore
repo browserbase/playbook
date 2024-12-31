@@ -1,4 +1,5 @@
-node_modules/
-examples/node_modules/
-guides/node_modules/
-**/.DS_Store
+.env
+node_modules
+tmp
+downloads
+.DS_Store
