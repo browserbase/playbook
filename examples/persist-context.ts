@@ -16,9 +16,6 @@
  *
  */
 
-// TODO: Change this to the URL you want to login to, default is Amazon
-const URL_TO_LOGIN_TO = "https://www.amazon.com/gp/sign-in.html";
-
 import StagehandConfig from "./stagehand.config.ts";
 import { Stagehand } from "@browserbasehq/stagehand";
 import { Browserbase } from "@browserbasehq/sdk";
@@ -44,11 +41,17 @@ const browserbase = new Browserbase({
   apiKey: BROWSERBASE_API_KEY,
 });
 
+// TODO: Change this to the URL you want to login to, default is Amazon
+const URL_TO_LOGIN_TO = "https://www.amazon.com/gp/sign-in.html";
+
 /**
  * Creates a new session with a context ID and adds session cookies to the context
  * @param contextId - The ID of the context to persist
  */
-async function persistContextSession(contextId: string) {
+async function persistContextSession(
+  contextId: string,
+  urlToLoginTo: string = URL_TO_LOGIN_TO
+) {
   const stagehand = new Stagehand({
     ...StagehandConfig,
     browserbaseSessionCreateParams: {
@@ -66,7 +69,7 @@ async function persistContextSession(contextId: string) {
     `Session created with ID: ${stagehand.browserbaseSessionID}.\n\nSession URL: https://browserbase.com/sessions/${stagehand.browserbaseSessionID}`
   );
   const page = stagehand.page;
-  await page.goto(URL_TO_LOGIN_TO);
+  await page.goto(urlToLoginTo);
 
   announce(
     `Opening the debugger URL in your default browser. When you login, the following session will remember your authentication.`
@@ -89,7 +92,10 @@ async function persistContextSession(contextId: string) {
  * Opens a new session with a context ID and uses the cookies from the context to automatically login
  * @param contextId - The ID of the persisted context
  */
-async function openPersistedContextSession(contextId: string) {
+async function openPersistedContextSession(
+  contextId: string,
+  urlToLoginTo: string = URL_TO_LOGIN_TO
+) {
   const stagehand = new Stagehand({
     ...StagehandConfig,
     browserbaseSessionCreateParams: {
@@ -105,7 +111,7 @@ async function openPersistedContextSession(contextId: string) {
   await stagehand.init();
   const page = stagehand.page;
   // This will be logged in
-  await page.goto(URL_TO_LOGIN_TO);
+  await page.goto(urlToLoginTo);
   announce(
     `Opening the debugger URL in your default browser. This session should take you to the logged in page if the context was persisted.`
   );
