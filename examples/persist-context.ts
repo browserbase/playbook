@@ -16,6 +16,9 @@
  *
  */
 
+// TODO: Change this to the URL you want to login to, default is Amazon
+const URL_TO_LOGIN_TO = "https://www.amazon.com/gp/sign-in.html";
+
 import StagehandConfig from "./stagehand.config.ts";
 import { Stagehand } from "@browserbasehq/stagehand";
 import { Browserbase } from "@browserbasehq/sdk";
@@ -23,8 +26,6 @@ import chalk from "chalk";
 import dotenv from "dotenv";
 import { announce } from "./utils.ts";
 
-// TODO: Change this to the URL you want to login to, default is Amazon
-const URL_TO_LOGIN_TO = "https://www.amazon.com/gp/sign-in.html";
 dotenv.config();
 
 let BROWSERBASE_PROJECT_ID: string;
