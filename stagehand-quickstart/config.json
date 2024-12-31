@@ -1,10 +1,9 @@
 {
   "default": {
-    "include": ["index.ts"],
-    "exclude": ["blank.ts"]
+    "blank.ts": "rm"
   },
   "blank": {
-    "include": ["blank.ts"],
-    "exclude": ["index.ts"]
+    "index.ts": "rm",
+    "blank.ts": "index.ts"
   }
 }
