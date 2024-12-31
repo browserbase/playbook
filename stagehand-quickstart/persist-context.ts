@@ -3,13 +3,16 @@
  *
  * This is a simple example of how to persist a context session using Stagehand and Browserbase.
  *
+ * To use it, change URL_TO_LOGIN_TO to the URL you want to login to, default is Amazon.
+ * This will create two browser sessions - one to login and one to use the cookies from the login session.
+ *
  * TO RUN THIS PROJECT:
  * ```
  * npm install
  * npm run start
  * ```
  *
- * To edit config, see `stagehand.config.ts`
+ * To edit Stagehand config, see `stagehand.config.ts`
  *
  */
 
