@@ -151,7 +151,7 @@ async function openDebuggerUrl(sessionId: string) {
     platform === "win32"
       ? "start"
       : platform === "darwin"
-        ? "open"
-        : "xdg-open";
+      ? "open"
+      : "xdg-open";
   exec(`${command} ${debuggerFullscreenUrl}`);
 }

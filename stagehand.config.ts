@@ -1,6 +1,5 @@
 import type { ConstructorParams, LogLine } from "@browserbasehq/stagehand";
 import dotenv from "dotenv";
-import boxen from "boxen";
 
 dotenv.config();
 
