@@ -22,8 +22,8 @@ import boxen from "boxen";
 import dotenv from "dotenv";
 import { announce } from "./utils.ts";
 
-// const URL_TO_LOGIN_TO = "https://www.amazon.com/gp/sign-in.html";
-const URL_TO_LOGIN_TO = "https://www.google.com";
+// TODO: Change this to the URL you want to login to, default is Amazon
+const URL_TO_LOGIN_TO = "https://www.amazon.com/gp/sign-in.html";
 dotenv.config();
 
 let BROWSERBASE_PROJECT_ID: string;
@@ -42,6 +42,10 @@ const browserbase = new Browserbase({
   apiKey: BROWSERBASE_API_KEY,
 });
 
+/**
+ * Creates a new session with a context ID and adds session cookies to the context
+ * @param contextId - The ID of the context to persist
+ */
 async function persistContextSession(contextId: string) {
   const stagehand = new Stagehand({
     ...StagehandConfig,
@@ -63,7 +67,7 @@ async function persistContextSession(contextId: string) {
   await page.goto(URL_TO_LOGIN_TO);
 
   announce(
-    `Opening the debugger URL in your default browser. When you login to Amazon, the following session will remember your authentication.`
+    `Opening the debugger URL in your default browser. When you login, the following session will remember your authentication.`
   );
 
   console.log(
@@ -79,6 +83,10 @@ async function persistContextSession(contextId: string) {
   );
 }
 
+/**
+ * Opens a new session with a context ID and uses the cookies from the context to automatically login
+ * @param contextId - The ID of the persisted context
+ */
 async function openPersistedContextSession(contextId: string) {
   const stagehand = new Stagehand({
     ...StagehandConfig,
@@ -104,21 +112,29 @@ async function openPersistedContextSession(contextId: string) {
   await stagehand.close();
 }
 
-(async () => {
+async function main() {
+  // Create a new context
   const bbContext = await browserbase.contexts.create({
     projectId: BROWSERBASE_PROJECT_ID,
   });
   console.log("Created context", bbContext.id);
+
   // Create a new session with the context
   await persistContextSession(bbContext.id);
   announce(
     "Waiting 10 seconds before opening the persisted context session..."
   );
   await new Promise((resolve) => setTimeout(resolve, 10000));
+
   // Open the persisted context session
   await openPersistedContextSession(bbContext.id);
+}
+
+(async () => {
+  await main();
 })();
 
+// Wait for enter key press
 async function waitForEnter() {
   await new Promise<void>((resolve) => {
     process.stdin.once("data", () => resolve());
