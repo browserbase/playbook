@@ -4,7 +4,6 @@
   "scripts": {
     "build": "tsc",
     "start": "tsx index.ts",
-    "persist-context-session": "tsx persist_context_session.ts",
     "postinstall": "playwright install"
   },
   "dependencies": {

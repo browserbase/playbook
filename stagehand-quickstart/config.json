@@ -1,9 +1,16 @@
 {
   "default": {
-    "blank.ts": "rm"
+    "blank.ts": "rm",
+    "persist-context.ts": "rm"
   },
   "blank": {
     "index.ts": "rm",
-    "blank.ts": "index.ts"
+    "blank.ts": "index.ts",
+    "persist-context.ts": "rm"
+  },
+  "persist-context": {
+    "index.ts": "rm",
+    "blank.ts": "rm",
+    "persist-context.ts": "index.ts"
   }
 }

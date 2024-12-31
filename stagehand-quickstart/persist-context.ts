@@ -21,8 +21,9 @@ import chalk from "chalk";
 import boxen from "boxen";
 import dotenv from "dotenv";
 import { announce } from "./utils.ts";
-import { SessionCreateParams } from "@browserbasehq/sdk/resources/index.mjs";
 
+// const URL_TO_LOGIN_TO = "https://www.amazon.com/gp/sign-in.html";
+const URL_TO_LOGIN_TO = "https://www.google.com";
 dotenv.config();
 
 let BROWSERBASE_PROJECT_ID: string;
@@ -59,14 +60,11 @@ async function persistContextSession(contextId: string) {
     `Session created with ID: ${stagehand.browserbaseSessionID}.\n\nSession URL: https://browserbase.com/sessions/${stagehand.browserbaseSessionID}`
   );
   const page = stagehand.page;
-  await page.goto("https://www.amazon.com/gp/sign-in.html");
+  await page.goto(URL_TO_LOGIN_TO);
 
   announce(
-    `${chalk.green("Press enter")} to open the debugger URL in your default browser. When you login to Amazon, the following session will remember your authentication.
-
-${chalk.yellow("When you're logged in, come back here and press enter once again to continue...")}`
+    `Opening the debugger URL in your default browser. When you login to Amazon, the following session will remember your authentication.`
   );
-  await waitForEnter();
 
   console.log(
     chalk.yellow("\n\nOnce you're logged in, press enter to continue...\n\n")
@@ -74,7 +72,11 @@ ${chalk.yellow("When you're logged in, come back here and press enter once again
   await openDebuggerUrl(stagehand.browserbaseSessionID!);
   await waitForEnter();
   await stagehand.close();
-  console.log(chalk.green("Done!"));
+  console.log("Waiting 10 seconds for the context to be persisted...");
+  await new Promise((resolve) => setTimeout(resolve, 10000));
+  console.log(
+    chalk.green("Ready to open a new session with the persisted context!")
+  );
 }
 
 async function openPersistedContextSession(contextId: string) {
@@ -93,13 +95,10 @@ async function openPersistedContextSession(contextId: string) {
   await stagehand.init();
   const page = stagehand.page;
   // This will be logged in
-  await page.goto("https://www.amazon.com");
+  await page.goto(URL_TO_LOGIN_TO);
   announce(
-    `${chalk.green("Press enter")} to open the debugger URL in your default browser. This session should take you to the logged in Amazon homepage if you logged in previously and the context was persisted.
-
-${chalk.yellow("Press enter once again to continue...")}`
+    `Opening the debugger URL in your default browser. This session should take you to the logged in page if the context was persisted.`
   );
-  await waitForEnter();
   await openDebuggerUrl(stagehand.browserbaseSessionID!);
   await waitForEnter();
   await stagehand.close();
@@ -109,10 +108,15 @@ ${chalk.yellow("Press enter once again to continue...")}`
   const bbContext = await browserbase.contexts.create({
     projectId: BROWSERBASE_PROJECT_ID,
   });
+  console.log("Created context", bbContext.id);
+  // Create a new session with the context
   await persistContextSession(bbContext.id);
+  announce(
+    "Waiting 10 seconds before opening the persisted context session..."
+  );
+  await new Promise((resolve) => setTimeout(resolve, 10000));
+  // Open the persisted context session
   await openPersistedContextSession(bbContext.id);
-
-  // Do it again with the persisted context
 })();
 
 async function waitForEnter() {
