@@ -17,11 +17,9 @@
  */
 
 import StagehandConfig from "./stagehand.config.ts";
-import { Page, BrowserContext, Stagehand } from "@browserbasehq/stagehand";
+import { Stagehand } from "@browserbasehq/stagehand";
 import { Browserbase } from "@browserbasehq/sdk";
-import { z } from "zod";
 import chalk from "chalk";
-import boxen from "boxen";
 import dotenv from "dotenv";
 import { announce } from "./utils.ts";
 
