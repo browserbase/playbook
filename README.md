@@ -16,17 +16,17 @@ Get ready for a show-stopping development experience.
    npx create-browser-app my-browser-app
    ```
 
-You can also create a project from an example:
+   You can also create a project from an example:
 
-```bash
-npx create-browser-app my-app --example blank
-```
+   ```bash
+   npx create-browser-app my-app --example blank
+   ```
 
-Or to create a project with persistent contexts:
+   Or to create a project with persistent contexts:
 
-```bash
-npx create-browser-app my-app --example persist-context
-```
+   ```bash
+   npx create-browser-app my-app --example persist-context
+   ```
 
 2. Install dependencies:
 
