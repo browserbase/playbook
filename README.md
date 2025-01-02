@@ -10,34 +10,31 @@ Stagehand is an SDK for automating browsers. It's built on top of [Playwright](h
 
 Get ready for a show-stopping development experience.
 
-1. Run `npx create-browser-app` to create a new project.
+1. Run `npx create-browser-app` to create a new Stagehand project.
 
    ```bash
-   npx create-browser-app@latest my-browser-app
+   npx create-browser-app my-browser-app
    ```
 
-2. Copy `.env.example` to `.env` and update with your credentials:
+You can also create a project from an example:
+
+```bash
+npx create-browser-app my-app --example blank
+```
+
+Or to create a project with persistent contexts:
+
+```bash
+npx create-browser-app my-app --example persist-context
+```
+
+2. Install dependencies:
 
    ```bash
-   cp .env.example .env
+   cd my-app && npm install
    ```
 
-   Required credentials in .env:
-
-   ```
-   BROWSERBASE_PROJECT_ID="YOUR_BROWSERBASE_PROJECT_ID"
-   BROWSERBASE_API_KEY="YOUR_BROWSERBASE_API_KEY"
-   OPENAI_API_KEY="THIS_IS_OPTIONAL_WITH_ANTHROPIC_KEY"
-   ANTHROPIC_API_KEY="THIS_IS_OPTIONAL_WITH_OPENAI_KEY"
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-4. Run the script:
+3. Run the script:
 
    ```bash
    npm run start
