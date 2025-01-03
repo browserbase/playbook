@@ -13,6 +13,7 @@
   },
   "deploy-vercel": {
     "examples/deploy_vercel.ts": "index.ts",
-    "examples/api/stagehand.ts": "api/stagehand.ts"
+    "examples/api/stagehand.ts": "api/stagehand.ts",
+	"examples/vercel.json": "vercel.json"
   }
 }
