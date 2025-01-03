@@ -114,6 +114,21 @@ if (import.meta.url === new URL(process.argv[1], "file:").href) {
     const response = await run();
     const data = await response.json();
     console.log(data);
+    console.log(
+      [
+        chalk.yellow("\nTO DEPLOY THIS PROJECT:"),
+        "",
+        "1. Make a new Vercel project and add the environment variables to the project:",
+        chalk.blue(
+          "https://vercel.com/docs/projects/environment-variables/managing-environment-variables#declare-an-environment-variable"
+        ),
+        "",
+        "2. Run " + chalk.green("npx vercel deploy"),
+        "",
+        "3. Go to " + chalk.blue("https://YOUR_VERCEL_APP_URL/api/stagehand"),
+        "",
+      ].join("\n")
+    );
     console.log(chalk.yellow("\n\n🤘 Thanks for using Stagehand!"));
     console.log(
       `Report an issue: ${chalk.blue(
