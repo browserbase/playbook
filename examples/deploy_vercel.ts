@@ -62,7 +62,9 @@ export async function run(request?: Request) {
 
   if (StagehandConfig.enableCaching) {
     console.warn(
-      "You are running this example with prompt caching enabled. Overriding to disable."
+      chalk.yellow(
+        "[WARNING] You are running this example with prompt caching enabled. Overriding to disable."
+      )
     );
   }
 
