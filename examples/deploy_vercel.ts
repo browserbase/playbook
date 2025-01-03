@@ -112,7 +112,8 @@ export async function run(request?: Request) {
 if (import.meta.url === new URL(process.argv[1], "file:").href) {
   (async () => {
     const response = await run();
-    console.log(response);
+    const data = await response.json();
+    console.log(data);
     console.log(chalk.yellow("\n\n🤘 Thanks for using Stagehand!"));
     console.log(
       `Report an issue: ${chalk.blue(
