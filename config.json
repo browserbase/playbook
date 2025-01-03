@@ -10,5 +10,9 @@
   },
   "sf-ticket-agent": {
     "examples/sf-ticket-agent.ts": "index.ts"
+  },
+  "deploy-vercel": {
+    "examples/deploy_vercel.ts": "index.ts",
+    "examples/api/stagehand.ts": "api/stagehand.ts"
   }
 }
