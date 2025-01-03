@@ -40,7 +40,9 @@ try {
 }
 ```
 
-This is useful for handling errors or unexpected behavior in Playwright code that is vulnerable to unexpected DOM changes.
+Act `action` should be as atomic and specific as possible, i.e. "Click the sign in button" or "Type 'hello' into the search input". Avoid actions that are too broad, i.e. "Order me pizza" or "Send an email to Paul asking him to call me". Actions work best for Playwright code that is vulnerable to unexpected DOM changes.
+
+When using `act`, write Playwright code FIRST, then wrap it with a try-catch block where the catch block is `act`.
 
 ## Extract
 
@@ -52,6 +54,7 @@ const data = await page.extract({
   schema: z.object({
     text: z.string(),
   }),
+  useTextExtract: true,
 });
 ```
 
@@ -65,6 +68,8 @@ const data = await page.extract({
   }),
 });
 ```
+
+Set `useTextExtract` to `true` for better results.
 
 ## Observe
 
