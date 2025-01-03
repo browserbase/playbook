@@ -16,12 +16,12 @@
  *
  */
 
-import StagehandConfig from "./stagehand.config.ts";
+import StagehandConfig from "./stagehand.config.js";
 import { Stagehand } from "@browserbasehq/stagehand";
 import { Browserbase } from "@browserbasehq/sdk";
 import chalk from "chalk";
 import dotenv from "dotenv";
-import { announce } from "./utils.ts";
+import { announce } from "./utils.js";
 
 dotenv.config();
 

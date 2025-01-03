@@ -11,13 +11,13 @@
  *
  */
 
-import StagehandConfig from "./stagehand.config.ts";
+import StagehandConfig from "./stagehand.config.js";
 import { Page, BrowserContext, Stagehand } from "@browserbasehq/stagehand";
 import { z } from "zod";
 import chalk from "chalk";
 import boxen from "boxen";
 import dotenv from "dotenv";
-import { announce } from "./utils.ts";
+import { announce } from "./utils.js";
 
 dotenv.config();
 

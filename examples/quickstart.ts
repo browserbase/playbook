@@ -17,13 +17,13 @@
  * 4. Use Playwright to click the first link. If it fails, use `act` to gracefully fallback to Stagehand AI.
  */
 
-import StagehandConfig from "./stagehand.config.ts";
+import StagehandConfig from "./stagehand.config.js";
 import { Page, BrowserContext, Stagehand } from "@browserbasehq/stagehand";
 import { z } from "zod";
 import chalk from "chalk";
 import boxen from "boxen";
 import dotenv from "dotenv";
-import { announce } from "./utils.ts";
+import { announce } from "./utils.js";
 
 dotenv.config();
 
@@ -43,7 +43,9 @@ async function main({
       "Stagehand is a tool that allows you to automate browser interactions.",
       "Watch as this demo automatically performs the following steps:",
       "",
-      `📍 Step 1: Stagehand will auto-navigate to ${chalk.blue("https://docs.browserbase.com/")}`,
+      `📍 Step 1: Stagehand will auto-navigate to ${chalk.blue(
+        "https://docs.browserbase.com/"
+      )}`,
       `📍 Step 2: Stagehand will use AI to ${chalk.green(
         "extract"
       )} information about the quickstart`,

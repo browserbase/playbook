@@ -15,7 +15,7 @@
  * 4. Fill out payment information using Stagehand's AI-powered form filling
  */
 
-import StagehandConfig from "./stagehand.config.ts";
+import StagehandConfig from "./stagehand.config.js";
 import { Stagehand } from "@browserbasehq/stagehand";
 import chalk from "chalk";
 import boxen from "boxen";
@@ -41,10 +41,14 @@ async function main() {
       "Stagehand is a tool that allows you to automate browser interactions.",
       "In this quickstart, we'll be automating a parking ticket payment on the San Francisco Municipal Transportation Agency website.",
       "",
-      `1. Navigate to ${chalk.blue("https://wmq.etimspayments.com/pbw/include/sanfrancisco/input.jsp")}`,
+      `1. Navigate to ${chalk.blue(
+        "https://wmq.etimspayments.com/pbw/include/sanfrancisco/input.jsp"
+      )}`,
       `2. Use ${chalk.green("act")} to enter the license plate information`,
       `3. Select all tickets and submit the form`,
-      `4. Fill out the payment information using ${chalk.green("act")} with variables`,
+      `4. Fill out the payment information using ${chalk.green(
+        "act"
+      )} with variables`,
       "",
       `${chalk.bold(chalk.green("PRESS ENTER TO CONTINUE..."))}`,
     ].join("\n")

@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "allowImportingTsExtensions": true,
-    "noEmit": true
+    "allowImportingTsExtensions": false,
+    "noEmit": false
   },
-  "include": ["*.ts", "examples/persist-context.ts"],
+  "include": ["*.ts", "api"],
   "exclude": ["node_modules", "dist"]
 }
