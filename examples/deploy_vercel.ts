@@ -22,6 +22,7 @@ import StagehandConfig from "./stagehand.config.js";
 import { Page, BrowserContext, Stagehand } from "@browserbasehq/stagehand";
 import { z } from "zod";
 import dotenv from "dotenv";
+import chalk from "chalk";
 import { getEnvVar } from "./utils.js";
 
 dotenv.config();
@@ -112,9 +113,11 @@ if (import.meta.url === new URL(process.argv[1], "file:").href) {
   (async () => {
     const response = await run();
     console.log(response);
-    console.log("\n\nThanks for using Stagehand!");
+    console.log(chalk.yellow("\n\n🤘 Thanks for using Stagehand!"));
     console.log(
-      "Report an issue: https://github.com/browserbase/stagehand/issues/new"
+      `Report an issue: ${chalk.blue(
+        "https://github.com/browserbase/stagehand/issues/new"
+      )}`
     );
   })();
 }
