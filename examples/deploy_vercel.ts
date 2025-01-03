@@ -1,21 +1,18 @@
 /**
  * 🤘 Welcome to Stagehand!
  *
+ * This example shows how to deploy a Stagehand project to Vercel.
+ * If you're seeing this in the browser, go to /api/stagehand to see the results!
+ *
  * TO DEPLOY THIS PROJECT:
- *
- * 1. Make a new Vercel project and add the environment variables to the project:
- * https://vercel.com/docs/projects/environment-variables/managing-environment-variables#declare-an-environment-variable
- *
- * 2. Run `npx vercel deploy`
- *
- * 3. Go to https://YOUR_VERCEL_APP_URL/api/stagehand
+ * 1. Run `npx vercel deploy`
+ * 2. Go to YOUR_APP_URL/api/stagehand
  *
  * TO RUN THIS PROJECT LOCALLY:
  * ```
  * npm install
  * npm run dev
  * ```
- *
  */
 
 import StagehandConfig from "./stagehand.config.js";
