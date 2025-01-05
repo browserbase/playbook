@@ -1,5 +1,5 @@
 {
-  "default": {
+  "quickstart": {
     "examples/quickstart.ts": "index.ts"
   },
   "blank": {
