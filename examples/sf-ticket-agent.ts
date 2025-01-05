@@ -83,16 +83,16 @@ async function main() {
     "https://wmq.etimspayments.com/pbw/include/sanfrancisco/input.jsp"
   );
 
-  await stagehand.act({
+  await page.act({
     action: "Enter the plate number 8XWY857 and then search for citations.",
   });
 
-  await stagehand.act({
+  await page.act({
     action:
       "Select the 'I would like to pay for all tickets' radio button. Then click the 'Submit' button.",
   });
 
-  await stagehand.act({
+  await page.act({
     action:
       "Enter the following information:\n" +
       "Name on the card: %nameOnCard%\n" +
@@ -117,7 +117,7 @@ async function main() {
     },
   });
 
-  await stagehand.act({
+  await page.act({
     action: "Click the 'Submit' button.",
   });
 
