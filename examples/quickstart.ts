@@ -55,17 +55,8 @@ async function main({
       `📍 Step 4: Stagehand will attempt to click the first link using Playwright, with ${chalk.green(
         "act"
       )} as an AI fallback`,
-      "",
-      `${chalk.bold(chalk.green("PRESS ENTER TO START THE DEMO..."))}`,
     ].join("\n")
   );
-
-  //   Wait for user to press enter
-  await new Promise((resolve) => {
-    process.stdin.once("data", () => {
-      resolve(undefined);
-    });
-  });
 
   if (StagehandConfig.env === "BROWSERBASE" && stagehand.browserbaseSessionID) {
     console.log(
