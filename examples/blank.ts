@@ -46,4 +46,9 @@ async function main({
     stagehand,
   });
   await stagehand.close();
+  console.log(
+    `\n🤘 Thanks for using Stagehand! Create an issue if you have any feedback: ${chalk.blue(
+      "https://github.com/browserbase/stagehand/issues/new"
+    )}\n`
+  );
 })().catch(console.error);
