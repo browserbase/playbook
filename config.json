@@ -14,6 +14,10 @@
   "deploy-vercel": {
     "examples/deploy_vercel.ts": "index.ts",
     "examples/api/stagehand.ts": "api/stagehand.ts",
-	"examples/vercel.json": "vercel.json"
+    "examples/vercel.json": "vercel.json"
+  },
+  "custom-client-ollama": {
+    "examples/custom_client_ollama.ts": "index.ts",
+    "examples/ollama_client.ts": "ollama_client.ts"
   }
 }
