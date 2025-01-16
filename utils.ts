@@ -1,5 +1,5 @@
 import boxen from "boxen";
-
+import { z } from "zod";
 export function announce(message: string, title?: string) {
   console.log(
     boxen(message, {
@@ -21,4 +21,19 @@ export function getEnvVar(name: string, required = true): string | undefined {
     throw new Error(`${name} not found in environment variables`);
   }
   return value;
+}
+
+/**
+ * Validate a Zod schema against some data
+ * @param schema - The Zod schema to validate against
+ * @param data - The data to validate
+ * @returns Whether the data is valid against the schema
+ */
+export function validateZodSchema(schema: z.ZodTypeAny, data: unknown) {
+  try {
+    schema.parse(data);
+    return true;
+  } catch {
+    return false;
+  }
 }
