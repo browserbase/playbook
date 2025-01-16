@@ -17,17 +17,15 @@
  * 4. Use Playwright to click the first link. If it fails, use `act` to gracefully fallback to Stagehand AI.
  */
 
-import StagehandConfig from "./stagehand.config.js";
 import { Page, BrowserContext, Stagehand } from "@browserbasehq/stagehand";
 import { z } from "zod";
 import chalk from "chalk";
 import boxen from "boxen";
 import dotenv from "dotenv";
-import { announce } from "./utils.js";
 
 dotenv.config();
 
-async function main({
+export async function main({
   page,
   context,
   stagehand,
@@ -57,21 +55,6 @@ async function main({
       )} as an AI fallback`,
     ].join("\n")
   );
-
-  if (StagehandConfig.env === "BROWSERBASE" && stagehand.browserbaseSessionID) {
-    console.log(
-      boxen(
-        `View this session live in your browser: \n${chalk.blue(
-          `https://browserbase.com/sessions/${stagehand.browserbaseSessionID}`
-        )}`,
-        {
-          title: "Browserbase",
-          padding: 1,
-          margin: 3,
-        }
-      )
-    );
-  }
 
   //   You can use the `page` instance to write any Playwright code
   //   For more info: https://playwright.dev/docs/pom
@@ -202,25 +185,14 @@ async function main({
       )} to gracefully fallback to Stagehand AI.`,
     ].join("\n\n")
   );
-  console.log(
-    `\n🤘 Thanks for using Stagehand! Create an issue if you have any feedback: ${chalk.blue(
-      "https://github.com/browserbase/stagehand/issues/new"
-    )}\n`
-  );
-  process.exit(0);
 }
 
-(async () => {
-  const stagehand = new Stagehand({
-    ...StagehandConfig,
-  });
-  await stagehand.init();
-  const page = stagehand.page;
-  const context = stagehand.context;
-  await main({
-    page,
-    context,
-    stagehand,
-  });
-  await stagehand.close();
-})().catch(console.error);
+function announce(message: string, title?: string) {
+  console.log(
+    boxen(message, {
+      padding: 1,
+      margin: 3,
+      title: title || "Stagehand",
+    })
+  );
+}
