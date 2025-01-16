@@ -25,7 +25,7 @@ import { OllamaClient } from "./ollama_client.js";
 
 dotenv.config();
 
-async function main({
+export async function main({
   page,
   context,
   stagehand,
@@ -34,7 +34,6 @@ async function main({
   context: BrowserContext; // Playwright BrowserContext
   stagehand: Stagehand; // Stagehand instance
 }) {
-  await stagehand.init();
   await stagehand.page.goto("https://news.ycombinator.com");
 
   const headlines = await stagehand.page.extract({
