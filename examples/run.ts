@@ -1,7 +1,7 @@
 import { Stagehand } from "@browserbasehq/stagehand";
 import StagehandConfig from "../stagehand.config.js";
 import chalk from "chalk";
-import { main } from "./index.js";
+import { main } from "./main.js";
 import boxen from "boxen";
 
 async function run() {
