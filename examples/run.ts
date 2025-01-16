@@ -1,3 +1,14 @@
+/**
+ * 🤘 Welcome to Stagehand!
+ *
+ * You probably DON'T NEED TO BE IN THIS FILE
+ *
+ * You're probably instead looking for the main() function in main.ts
+ *
+ * This is run when you do npm run start; it just calls main()
+ *
+ */
+
 import { Stagehand } from "@browserbasehq/stagehand";
 import StagehandConfig from "./stagehand.config.js";
 import chalk from "chalk";
