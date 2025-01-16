@@ -133,30 +133,6 @@ export async function main({
   //   Close the browser
   await stagehand.close();
 
-  if (StagehandConfig.env === "BROWSERBASE" && stagehand.browserbaseSessionID) {
-    console.log(
-      "Session completed. Waiting for 10 seconds to see the logs and recording..."
-    );
-    //   Wait for 10 seconds to see the logs
-    await new Promise((resolve) => setTimeout(resolve, 10000));
-    console.log(
-      boxen(
-        `View this session recording in your browser: \n${chalk.blue(
-          `https://browserbase.com/sessions/${stagehand.browserbaseSessionID}`
-        )}`,
-        {
-          title: "Browserbase",
-          padding: 1,
-          margin: 3,
-        }
-      )
-    );
-  } else {
-    console.log(
-      "We hope you enjoyed using Stagehand locally! On Browserbase, you can bypass captchas, replay sessions, and access unparalleled debugging tools!\n10 free sessions: https://www.browserbase.com/sign-up\n\n"
-    );
-  }
-
   console.log(
     [
       "To recap, here are the steps we took:",
