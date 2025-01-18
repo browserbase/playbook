@@ -1,6 +1,8 @@
-# 🤘 Create Browser App
+# 🤘 Welcome to Stagehand!
 
-Welcome! This is a starter kit for creating browser apps with [Stagehand](https://github.com/browserbase/stagehand).
+Hey! This is a project built with [Stagehand](https://github.com/browserbase/stagehand).
+
+You can build your own web agent using: `npx create-browser-app`!
 
 ## Setting the Stage
 
@@ -8,48 +10,32 @@ Stagehand is an SDK for automating browsers. It's built on top of [Playwright](h
 
 ## Curtain Call
 
-Get ready for a show-stopping development experience.
+Get ready for a show-stopping development experience. Just run:
 
-1. Run `npx create-browser-app` to create a new blank Stagehand project.
+```bash
+npm install && npm start
+```
 
-   ```bash
-   npx create-browser-app my-browser-app
-   ```
+## What's Next?
 
-   We also have a few examples to get you started:
+### Add your API keys
 
-   **Quickstart**: A simple example that demonstrates the basics of Stagehand.
+Required API keys/environment variables are in the `.env.example` file. Copy it to `.env` and add your API keys.
 
-   ```bash
-   npx create-browser-app my-app --example quickstart
-   ```
+```bash
+cp .env.example .env && nano .env # Add your API keys to .env
+```
 
-   **Deploy Vercel**: A scaffolded Vercel function that can be deployed with `npx vercel deploy`.
+### Custom .cursorrules
 
-   ```bash
-   npx create-browser-app my-app --example deploy-vercel
-   ```
+We have custom .cursorrules for this project. It'll help quite a bit with writing Stagehand easily.
 
-   **Persist Context**: A project with persistent contexts:
+### Run on Browserbase
 
-   ```bash
-   npx create-browser-app my-app --example persist-context
-   ```
+To run on Browserbase, add your API keys to .env and change `env: "LOCAL"` to `env: "BROWSERBASE"` in [stagehand.config.ts](stagehand.config.ts).
 
-   **SF Ticket Agent**: A simple example that demonstrates how to create a ticket agent for San Francisco Muni.
+### Use Anthropic Claude 3.5 Sonnet
 
-   ```bash
-   npx create-browser-app my-app --example sf-ticket-agent
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   cd my-app && npm install
-   ```
-
-3. Run the script:
-
-   ```bash
-   npm run start
-   ```
+1. Add your API key to .env
+2. Change `modelName: "gpt-4o"` to `modelName: "claude-3-5-sonnet-latest"` in [stagehand.config.ts](stagehand.config.ts)
+3. Change `modelClientOptions: { apiKey: process.env.OPENAI_API_KEY }` to `modelClientOptions: { apiKey: process.env.ANTHROPIC_API_KEY }` in [stagehand.config.ts](stagehand.config.ts)

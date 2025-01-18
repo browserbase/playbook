@@ -21,5 +21,9 @@
   "custom-client-ollama": {
     "examples/custom_client_ollama.ts": "index.ts",
     "examples/ollama_client.ts": "ollama_client.ts"
+  },
+  "mintlify-ai": {
+    "examples/mintlify_ai.ts": "main.ts",
+    "examples/run.ts": "index.ts"
   }
 }
