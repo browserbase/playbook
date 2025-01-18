@@ -42,7 +42,6 @@ export async function main({
     schema: z.object({
       text: z.string(),
     }),
-    useTextExtract: true,
   });
   console.log(
     "\n\n" +
