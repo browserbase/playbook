@@ -42,7 +42,7 @@ const browserbase = new Browserbase({
 });
 
 // TODO: Change this to the URL you want to login to, default is GitHub
-const URL_TO_LOGIN_TO = "https://github.com";
+const URL_TO_LOGIN_TO = "https://github.com/login";
 
 /**
  * Creates a new session with a context ID and adds session cookies to the context
