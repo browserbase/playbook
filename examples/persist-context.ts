@@ -22,6 +22,7 @@ import { Browserbase } from "@browserbasehq/sdk";
 import chalk from "chalk";
 import dotenv from "dotenv";
 import { announce } from "./utils.js";
+import { promises as fs } from "fs";
 
 dotenv.config();
 
@@ -31,18 +32,17 @@ try {
   BROWSERBASE_PROJECT_ID = process.env.BROWSERBASE_PROJECT_ID!;
   BROWSERBASE_API_KEY = process.env.BROWSERBASE_API_KEY!;
 } catch (e) {
-  console.error(
-    "BROWSERBASE_PROJECT_ID and BROWSERBASE_API_KEY must be set in .env to run this example"
+  throw new Error(
+    "BROWSERBASE_PROJECT_ID and BROWSERBASE_API_KEY must be set in environment variables to run this example. Please check your .env file."
   );
-  process.exit(1);
 }
 
 const browserbase = new Browserbase({
   apiKey: BROWSERBASE_API_KEY,
 });
 
-// TODO: Change this to the URL you want to login to, default is Amazon
-const URL_TO_LOGIN_TO = "https://www.amazon.com/gp/sign-in.html";
+// TODO: Change this to the URL you want to login to, default is GitHub
+const URL_TO_LOGIN_TO = "https://github.com/login";
 
 /**
  * Creates a new session with a context ID and adds session cookies to the context
@@ -72,7 +72,7 @@ async function persistContextSession(
   await page.goto(urlToLoginTo);
 
   announce(
-    `Opening the debugger URL in your default browser. When you login, the following session will remember your authentication.`
+    `Opening the debugger URL in your default browser. When you login, the following session will remember your authentication. Once you're logged in, press enter to continue...`
   );
 
   console.log(
@@ -113,7 +113,9 @@ async function openPersistedContextSession(
   // This will be logged in
   await page.goto(urlToLoginTo);
   announce(
-    `Opening the debugger URL in your default browser. This session should take you to the logged in page if the context was persisted.`
+    `Opening the debugger URL in your default browser. This session should take you to the logged in page if the context was persisted. ${chalk.red(
+      "If not, try deleting context.txt and running npm run start again."
+    )}`
   );
   await openDebuggerUrl(stagehand.browserbaseSessionID!);
   await waitForEnter();
@@ -124,11 +126,29 @@ async function openPersistedContextSession(
  * MAIN FUNCTION
  */
 async function main() {
-  // Create a new context
+  if (StagehandConfig.env === "LOCAL") {
+    throw new Error(
+      "Your Stagehand config is set to LOCAL mode. Please set env to BROWSERBASE in stagehand.config.ts to use this feature."
+    );
+  }
+  // Check for existing context ID
+  const existingContextId = await loadContextId();
+
+  if (existingContextId) {
+    console.log("Found existing context ID:", existingContextId);
+    // Open the persisted context session directly
+    await openPersistedContextSession(existingContextId);
+    return;
+  }
+
+  // Create a new context if none exists
   const bbContext = await browserbase.contexts.create({
     projectId: BROWSERBASE_PROJECT_ID,
   });
-  console.log("Created context", bbContext.id);
+  console.log("Created new context:", bbContext.id);
+
+  // Save the context ID
+  await saveContextId(bbContext.id);
 
   // Create a new session with the context
   await persistContextSession(bbContext.id);
@@ -164,4 +184,16 @@ async function openDebuggerUrl(sessionId: string) {
       ? "open"
       : "xdg-open";
   exec(`${command} ${debuggerFullscreenUrl}`);
+}
+
+async function saveContextId(contextId: string) {
+  await fs.writeFile("context.txt", contextId);
+}
+
+async function loadContextId(): Promise<string | null> {
+  try {
+    return await fs.readFile("context.txt", "utf-8");
+  } catch (error) {
+    return null;
+  }
 }
