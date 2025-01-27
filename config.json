@@ -22,7 +22,7 @@
     "examples/custom_client_ollama.ts": "index.ts",
     "examples/ollama_client.ts": "ollama_client.ts"
   },
-  "custom-client-vercel": {
+  "custom-client-aisdk": {
     "examples/custom_client_aisdk.ts": "index.ts",
     "examples/aisdk_client.ts": "aisdk_client.ts"
   },
