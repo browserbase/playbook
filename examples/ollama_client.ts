@@ -12,234 +12,114 @@
  * ```
  */
 
+import type { AvailableModel } from "@browserbasehq/stagehand";
+import { LLMClient } from "@browserbasehq/stagehand";
+import type { CreateChatCompletionOptions } from "@browserbasehq/stagehand/dist/lib/llm/LLMClient";
 import {
-  AvailableModel,
-  ChatMessage,
-  CreateChatCompletionOptions,
-  LLMClient,
-} from "@browserbasehq/stagehand";
-import OpenAI, { type ClientOptions } from "openai";
-import { zodResponseFormat } from "openai/helpers/zod";
-import type {
-  ChatCompletion,
-  ChatCompletionAssistantMessageParam,
-  ChatCompletionContentPartImage,
-  ChatCompletionContentPartText,
-  ChatCompletionCreateParamsNonStreaming,
-  ChatCompletionMessageParam,
-  ChatCompletionSystemMessageParam,
-  ChatCompletionUserMessageParam,
-} from "openai/resources/chat/completions";
-import { validateZodSchema } from "./utils.js";
+  CoreAssistantMessage,
+  CoreMessage,
+  CoreSystemMessage,
+  CoreTool,
+  CoreUserMessage,
+  generateObject,
+  generateText,
+  ImagePart,
+  LanguageModel,
+  TextPart,
+} from "ai";
+import type { ChatCompletion } from "openai/resources/chat/completions";
 
 export class OllamaClient extends LLMClient {
   public type = "ollama" as const;
-  private client: OpenAI;
+  private model: LanguageModel;
 
-  constructor({
-    modelName = "llama3.2",
-    clientOptions,
-    enableCaching = false,
-  }: {
-    modelName?: string;
-    clientOptions?: ClientOptions;
-    enableCaching?: boolean;
-  }) {
-    if (enableCaching) {
-      console.warn(
-        "Caching is not supported yet. Setting enableCaching to true will have no effect."
-      );
-    }
-
-    super(modelName as AvailableModel);
-    this.client = new OpenAI({
-      ...clientOptions,
-      baseURL: clientOptions?.baseURL || "http://localhost:11434/v1",
-      apiKey: "ollama",
-    });
-    this.modelName = modelName as AvailableModel;
+  constructor({ model }: { model: LanguageModel }) {
+    super("ollama" as AvailableModel);
+    this.model = model;
   }
 
   async createChatCompletion<T = ChatCompletion>({
     options,
-    retries = 3,
-    logger,
   }: CreateChatCompletionOptions): Promise<T> {
-    const { image, requestId, ...optionsWithoutImageAndRequestId } = options;
-
-    // TODO: Implement vision support
-    if (image) {
-      console.warn(
-        "Image provided. Vision is not currently supported for Ollama"
-      );
-    }
-
-    logger({
-      category: "ollama",
-      message: "creating chat completion",
-      level: 1,
-      auxiliary: {
-        options: {
-          value: JSON.stringify({
-            ...optionsWithoutImageAndRequestId,
-            requestId,
-          }),
-          type: "object",
-        },
-        modelName: {
-          value: this.modelName,
-          type: "string",
-        },
-      },
-    });
-
-    if (options.image) {
-      console.warn(
-        "Image provided. Vision is not currently supported for Ollama"
-      );
-    }
-
-    let responseFormat = undefined;
-    if (options.response_model) {
-      responseFormat = zodResponseFormat(
-        options.response_model.schema,
-        options.response_model.name
-      );
-    }
-
-    /* eslint-disable */
-    // Remove unsupported options
-    const { response_model, ...ollamaOptions } = {
-      ...optionsWithoutImageAndRequestId,
-      model: this.modelName,
-    };
-
-    logger({
-      category: "ollama",
-      message: "creating chat completion",
-      level: 1,
-      auxiliary: {
-        ollamaOptions: {
-          value: JSON.stringify(ollamaOptions),
-          type: "object",
-        },
-      },
-    });
-
-    const formattedMessages: ChatCompletionMessageParam[] =
-      options.messages.map((message) => {
-        if (Array.isArray(message.content)) {
-          const contentParts = message.content.map((content) => {
-            if ("image_url" in content) {
-              const imageContent: ChatCompletionContentPartImage = {
-                image_url: {
-                  url: content.image_url.url,
-                },
-                type: "image_url",
-              };
-              return imageContent;
-            } else {
-              const textContent: ChatCompletionContentPartText = {
-                text: content.text,
-                type: "text",
-              };
-              return textContent;
-            }
-          });
-
-          if (message.role === "system") {
-            const formattedMessage: ChatCompletionSystemMessageParam = {
-              ...message,
-              role: "system",
-              content: contentParts.filter(
-                (content): content is ChatCompletionContentPartText =>
-                  content.type === "text"
-              ),
-            };
-            return formattedMessage;
-          } else if (message.role === "user") {
-            const formattedMessage: ChatCompletionUserMessageParam = {
-              ...message,
-              role: "user",
-              content: contentParts,
-            };
-            return formattedMessage;
-          } else {
-            const formattedMessage: ChatCompletionAssistantMessageParam = {
-              ...message,
-              role: "assistant",
-              content: contentParts.filter(
-                (content): content is ChatCompletionContentPartText =>
-                  content.type === "text"
-              ),
-            };
-            return formattedMessage;
-          }
+    const formattedMessages: CoreMessage[] = options.messages.map((message) => {
+      if (Array.isArray(message.content)) {
+        if (message.role === "system") {
+          const systemMessage: CoreSystemMessage = {
+            role: "system",
+            content: message.content
+              .map((c) => ("text" in c ? c.text : ""))
+              .join("\n"),
+          };
+          return systemMessage;
         }
 
-        const formattedMessage: ChatCompletionUserMessageParam = {
-          role: "user",
-          content: message.content,
-        };
+        const contentParts = message.content.map((content) => {
+          if ("image_url" in content) {
+            const imageContent: ImagePart = {
+              type: "image",
+              image: content.image_url.url,
+            };
+            return imageContent;
+          } else {
+            const textContent: TextPart = {
+              type: "text",
+              text: content.text,
+            };
+            return textContent;
+          }
+        });
 
-        return formattedMessage;
+        if (message.role === "user") {
+          const userMessage: CoreUserMessage = {
+            role: "user",
+            content: contentParts,
+          };
+          return userMessage;
+        } else {
+          const textOnlyParts = contentParts.map((part) => ({
+            type: "text" as const,
+            text: part.type === "image" ? "[Image]" : part.text,
+          }));
+          const assistantMessage: CoreAssistantMessage = {
+            role: "assistant",
+            content: textOnlyParts,
+          };
+          return assistantMessage;
+        }
+      }
+
+      return {
+        role: message.role,
+        content: message.content,
+      };
+    });
+
+    if (options.response_model) {
+      const response = await generateObject({
+        model: this.model,
+        messages: formattedMessages,
+        schema: options.response_model.schema,
       });
 
-    const body: ChatCompletionCreateParamsNonStreaming = {
-      ...ollamaOptions,
-      model: this.modelName,
-      messages: formattedMessages,
-      response_format: responseFormat,
-      stream: false,
-      tools: options.tools?.map((tool) => ({
-        function: {
-          name: tool.name,
-          description: tool.description,
-          parameters: tool.parameters,
-        },
-        type: "function",
-      })),
-    };
-
-    const response = await this.client.chat.completions.create(body);
-
-    logger({
-      category: "ollama",
-      message: "response",
-      level: 1,
-      auxiliary: {
-        response: {
-          value: JSON.stringify(response),
-          type: "object",
-        },
-        requestId: {
-          value: requestId,
-          type: "string",
-        },
-      },
-    });
-
-    if (options.response_model) {
-      const extractedData = response.choices[0].message.content;
-      if (!extractedData) {
-        throw new Error("No content in response");
-      }
-      const parsedData = JSON.parse(extractedData);
-
-      if (!validateZodSchema(options.response_model.schema, parsedData)) {
-        if (retries > 0) {
-          return this.createChatCompletion({
-            options,
-            logger,
-            retries: retries - 1,
-          });
-        }
-
-        throw new Error("Invalid response schema");
-      }
-
-      return parsedData;
+      return response.object as T;
     }
+
+    const tools: Record<string, CoreTool> = {};
+
+    if (options.tools) {
+      for (const rawTool of options.tools) {
+        tools[rawTool.name] = {
+          description: rawTool.description,
+          parameters: rawTool.parameters,
+        };
+      }
+    }
+
+    const response = await generateText({
+      model: this.model,
+      messages: formattedMessages,
+      tools,
+    });
 
     return response as T;
   }
