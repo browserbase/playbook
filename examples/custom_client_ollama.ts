@@ -37,16 +37,12 @@ export async function main({
   await stagehand.page.goto("https://news.ycombinator.com");
 
   const headlines = await stagehand.page.extract({
-    instruction: "Extract the top 3 stories from the Hacker News homepage.",
+    instruction: "Extract the top story from the Hacker News homepage.",
     schema: z.object({
-      stories: z
-        .array(
-          z.object({
-            title: z.string(),
-            points: z.number(),
-          })
-        )
-        .length(3),
+      story: z.object({
+        title: z.string(),
+        points: z.number(),
+      }),
     }),
     useTextExtract: true,
   });
