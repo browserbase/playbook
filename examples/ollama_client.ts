@@ -8,7 +8,7 @@
  * start an Ollama instance by running the following command:
  *
  * ```bash
- * ollama run llama3.2
+ * ollama run deepseek-r1
  * ```
  */
 
@@ -37,7 +37,7 @@ export class OllamaClient extends LLMClient {
   private client: OpenAI;
 
   constructor({
-    modelName = "llama3.2",
+    modelName = "deepseek-r1",
     clientOptions,
     enableCaching = false,
   }: {
