@@ -4,26 +4,17 @@
  * TO RUN THIS PROJECT:
  * ```
  * npm install
- * npm install ai @ai-sdk/openai
  * npm run start
  * ```
  *
  * To edit config, see `stagehand.config.ts`
  *
- * In this example, we'll be using a custom LLM client to use Vercel AI SDK instead of the default OpenAI client.
- *
- * 1. Go to Hacker News (https://news.ycombinator.com)
- * 2. Use `extract` to find the top 3 stories
  */
-
-import StagehandConfig from "./stagehand.config.js";
 import { Page, BrowserContext, Stagehand } from "@browserbasehq/stagehand";
 import { z } from "zod";
 import chalk from "chalk";
-import boxen from "boxen";
 import dotenv from "dotenv";
-import { AISdkClient } from "./aisdk_client.js";
-import { openai } from "@ai-sdk/openai";
+import { clearOverlays, drawObserveOverlay } from "./utils.js";
 
 dotenv.config();
 
@@ -36,74 +27,47 @@ export async function main({
   context: BrowserContext; // Playwright BrowserContext
   stagehand: Stagehand; // Stagehand instance
 }) {
-  await stagehand.page.goto("https://news.ycombinator.com");
+  async function actWithCache(instruction: string) {
+    // Observe the page and return the action to execute
+    const results = await page.observe({
+      instruction,
+      onlyVisible: false, // Faster/better/cheaper, but uses Chrome a11y tree so may not always target directly visible elements
+      returnAction: true, // return the action to execute
+    });
+    console.log(chalk.blue("Got results:"), results);
 
-  const headlines = await stagehand.page.extract({
-    instruction: "Extract the top 3 stories from the Hacker News homepage.",
-    schema: z.object({
-      stories: z
-        .array(
-          z.object({
-            title: z.string(),
-            points: z.number(),
-          })
-        )
-        .length(3),
-    }),
-    useTextExtract: true,
-  });
+    // You can cache the playwright action to use it later with no additional LLM calls :)
+    const actionToCache = results[0];
+    console.log(chalk.blue("Taking cacheable action:"), actionToCache);
 
-  console.log(headlines);
+    // OPTIONAL: Draw an overlay over the relevant xpaths
+    await drawObserveOverlay(page, results);
+    await page.waitForTimeout(1000); // Can delete this line, just a pause to see the overlay
+    await clearOverlays(page);
 
-  //   Close the browser
-  await stagehand.close();
-
-  if (StagehandConfig.env === "BROWSERBASE" && stagehand.browserbaseSessionID) {
-    console.log(
-      "Session completed. Waiting for 10 seconds to see the logs and recording..."
-    );
-    //   Wait for 10 seconds to see the logs
-    await new Promise((resolve) => setTimeout(resolve, 10000));
-    console.log(
-      boxen(
-        `View this session recording in your browser: \n${chalk.blue(
-          `https://browserbase.com/sessions/${stagehand.browserbaseSessionID}`
-        )}`,
-        {
-          title: "Browserbase",
-          padding: 1,
-          margin: 3,
-        }
-      )
-    );
-  } else {
-    console.log(
-      "We hope you enjoyed using Stagehand locally! On Browserbase, you can bypass captchas, replay sessions, and access unparalleled debugging tools!\n10 free sessions: https://www.browserbase.com/sign-up\n\n"
-    );
+    // Execute the action
+    await page.act(actionToCache);
   }
 
-  console.log(
-    `\n🤘 Thanks for using Stagehand! Create an issue if you have any feedback: ${chalk.blue(
-      "https://github.com/browserbase/stagehand/issues/new"
-    )}\n`
-  );
-  process.exit(0);
-}
+  await page.goto("https://docs.stagehand.dev/reference/introduction");
 
-(async () => {
-  const stagehand = new Stagehand({
-    ...StagehandConfig,
-    llmClient: new AISdkClient({
-      model: openai("gpt-4o"),
+  // You can pass a string directly to act with something like:
+  // await page.act("Click the search box")
+  // However, it's faster/cheaper/more reliable to use a cache-able approach
+  await actWithCache("Click the search box");
+
+  await actWithCache(
+    "Type 'Tell me in one sentence why I should use Stagehand' into the search box"
+  );
+  await actWithCache("Click the suggestion to use AI");
+  await page.waitForTimeout(2000);
+  const { text } = await page.extract({
+    instruction:
+      "extract the text of the AI suggestion from the search results",
+    schema: z.object({
+      text: z.string(),
     }),
+    useTextExtract: false, // Set this to true if you want to extract longer paragraphs
   });
-  await stagehand.init();
-  const page = stagehand.page;
-  const context = stagehand.context;
-  await main({
-    page,
-    context,
-    stagehand,
-  });
-  await stagehand.close();
-})().catch(console.error);
+  console.log(chalk.green("AI suggestion:"), text);
+}
