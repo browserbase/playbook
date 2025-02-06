@@ -7,7 +7,7 @@
  * npm run start
  * ```
  *
- * To edit config, see `stagehand.config.ts`
+ * To edit config/model, see `stagehand.config.ts`
  *
  */
 import { Page, BrowserContext, Stagehand } from "@browserbasehq/stagehand";

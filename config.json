@@ -20,10 +20,12 @@
   },
   "custom-client-ollama": {
     "examples/custom_client_ollama.ts": "index.ts",
-    "examples/ollama_client.ts": "ollama_client.ts"
+    "examples/ollama_client.ts": "ollama_client.ts",
+    "examples/run.ts": "index.ts"
   },
   "custom-client-aisdk": {
-    "examples/custom_client_aisdk.ts": "index.ts",
+    "examples/custom_client_aisdk.ts": "main.ts",
+    "examples/run.ts": "index.ts",
     "examples/aisdk_client.ts": "aisdk_client.ts"
   },
   "mintlify-ai": {
