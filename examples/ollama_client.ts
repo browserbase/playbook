@@ -1,3 +1,8 @@
+/******************************************************************************
+ * YOU PROBABLY DON'T WANT TO BE USING THIS FILE DIRECTLY                      *
+ * INSTEAD, EDIT `stagehand.config.ts` TO MODIFY THE CLIENT CONFIGURATION      *
+ ******************************************************************************/
+
 /**
  * Welcome to the Stagehand Ollama client!
  *
