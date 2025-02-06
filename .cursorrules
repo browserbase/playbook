@@ -9,9 +9,36 @@ This is a project that uses Stagehand, which amplifies Playwright with `act`, `e
 
 Use the following rules to write code for this project.
 
-- When writing Playwright code, wrap it with Stagehand `act`
-- When writing code that needs to extract data from the page, use Stagehand `extract`
-- When writing code that needs to observe the page, use Stagehand `observe`
+- When executing an atomic instruction like "click the sign in button", use Stagehand `observe` to get the xpath of the element to click. Explicitly pass the following params by default:
+
+```typescript
+await page.observe({
+  instruction: the instruction to execute,
+  onlyVisible: false, // Returns better results and less tokens, but uses Chrome a11y tree so may not always target directly visible elements
+  returnAction: true, // return the action to execute
+});
+```
+
+- The result of `observe` is an array of `ObserveResult` objects that can directly be used as params for `act` like this:
+  ```typescript
+  const results = await page.observe({
+    instruction: the instruction to execute,
+    onlyVisible: false, // Returns better results and less tokens, but uses Chrome a11y tree so may not always target directly visible elements
+    returnAction: true, // return the action to execute
+  });
+  await page.act(results[0]);
+  ```
+- When writing code that needs to extract data from the page, use Stagehand `extract`. Explicitly pass the following params by default:
+
+```typescript
+const { someValue } = await page.extract({
+  instruction: the instruction to execute,
+  schema: z.object({
+    someValue: z.string(),
+  }), // The schema to extract
+  useTextExtract: true, // Set true for better results on larger extractions (sentences, paragraphs, etc), or set false for small extractions (name, birthday, etc)
+});
+```
 
 ## Initialize
 
@@ -28,11 +55,15 @@ const context = stagehand.context; // Playwright BrowserContext
 
 ## Act
 
-For example, if you are writing Playwright code, wrap it with Stagehand `act` like this:
+You can cache the results of `observe` and use them as params for `act` like this:
 
 ```typescript
+const results = await page.observe({
+  instruction: "observe the page",
+});
+
 try {
-  await page.locator('button[name="Sign in"]').click();
+  await page.act(results[0]);
 } catch (error) {
   await page.act({
     action: "click the sign in button",
@@ -40,9 +71,9 @@ try {
 }
 ```
 
-Act `action` should be as atomic and specific as possible, i.e. "Click the sign in button" or "Type 'hello' into the search input". Avoid actions that are too broad, i.e. "Order me pizza" or "Send an email to Paul asking him to call me". Actions work best for Playwright code that is vulnerable to unexpected DOM changes.
+Be sure to cache the results of `observe` and use them as params for `act` to avoid unexpected DOM changes. Using `act` without caching will result in more unpredictable behavior.
 
-When using `act`, write Playwright code FIRST, then wrap it with a try-catch block where the catch block is `act`.
+Act `action` should be as atomic and specific as possible, i.e. "Click the sign in button" or "Type 'hello' into the search input". Avoid actions that are too broad, i.e. "Order me pizza" or "Send an email to Paul asking him to call me". Actions work best for Playwright code that is vulnerable to unexpected DOM changes.
 
 ## Extract
 
@@ -54,7 +85,7 @@ const data = await page.extract({
   schema: z.object({
     text: z.string(),
   }),
-  useTextExtract: true,
+  useTextExtract: true, // Set true for larger-scale extractions (multiple paragraphs), or set false for small extractions (name, birthday, etc)
 });
 ```
 
@@ -69,7 +100,7 @@ const data = await page.extract({
 });
 ```
 
-Set `useTextExtract` to `true` for better results.
+Set `useTextExtract` to `true` for larger-scale extractions (multiple paragraphs). Set `useTextExtract` to `false` for small extractions (name, birthday, etc).
 
 ## Observe
 
@@ -77,8 +108,11 @@ If you are writing code that needs to observe the page, use Stagehand `observe` 
 
 ```typescript
 const data = await page.observe({
-  instruction: "observe the page",
+  instruction: "click some element",
+  onlyVisible: false, // Returns better results and less tokens, but uses Chrome a11y tree so may not always target directly visible elements
+  returnAction: true, // return the action to execute
 });
 ```
 
-This returns a list of XPaths and descriptions of the data you want to extract as `{ selector: string; description: string }[]`.
+Setting `returnAction` to `false` returns a list of XPaths and descriptions of the data you want to extract as `{ selector: string; description: string }[]`. Setting `returnAction` to `true` returns the above plus a list of actions to execute as `{ selector: string; action: string; description: string; arguments: string[], backendNodeId: number }[]`.
+

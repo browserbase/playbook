@@ -19,12 +19,24 @@
     "examples/vercel.json": "vercel.json"
   },
   "custom-client-ollama": {
-    "examples/custom_client_ollama.ts": "index.ts",
-    "examples/ollama_client.ts": "ollama_client.ts"
+    "examples/custom_client_ollama.ts": "main.ts",
+    "examples/ollama_client.ts": "ollama_client.ts",
+    "examples/run.ts": "index.ts"
+  },
+  "custom-client-ollama-blank": {
+    "examples/blank.ts": "main.ts",
+    "examples/ollama_client.ts": "ollama_client.ts",
+    "examples/run.ts": "index.ts"
   },
   "custom-client-aisdk": {
-    "examples/custom_client_aisdk.ts": "index.ts",
+    "examples/quickstart.ts": "main.ts",
+    "examples/run.ts": "index.ts",
     "examples/aisdk_client.ts": "aisdk_client.ts"
+  },
+  "custom-client-aisdk-blank": {
+    "examples/blank.ts": "main.ts",
+    "examples/aisdk_client.ts": "aisdk_client.ts",
+    "examples/run.ts": "index.ts"
   },
   "mintlify-ai": {
     "examples/mintlify_ai.ts": "main.ts",

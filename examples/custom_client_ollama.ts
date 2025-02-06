@@ -21,7 +21,6 @@ import { z } from "zod";
 import chalk from "chalk";
 import boxen from "boxen";
 import dotenv from "dotenv";
-import { OllamaClient } from "./ollama_client.js";
 
 dotenv.config();
 
@@ -83,21 +82,3 @@ export async function main({
   );
   process.exit(0);
 }
-
-(async () => {
-  const stagehand = new Stagehand({
-    ...StagehandConfig,
-    llmClient: new OllamaClient({
-      modelName: "llama3.2",
-    }),
-  });
-  await stagehand.init();
-  const page = stagehand.page;
-  const context = stagehand.context;
-  await main({
-    page,
-    context,
-    stagehand,
-  });
-  await stagehand.close();
-})().catch(console.error);
