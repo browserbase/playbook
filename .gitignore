@@ -4,3 +4,10 @@ tmp
 downloads
 .DS_Store
 dist
+.env
+node_modules
+tmp
+downloads
+.DS_Store
+dist
+cache.json
