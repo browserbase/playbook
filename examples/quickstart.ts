@@ -10,11 +10,21 @@
  * To edit config, see `stagehand.config.ts`
  *
  */
-import { Page, BrowserContext, Stagehand } from "@browserbasehq/stagehand";
+import {
+  Page,
+  BrowserContext,
+  Stagehand,
+  ObserveResult,
+} from "@browserbasehq/stagehand";
 import { z } from "zod";
 import chalk from "chalk";
 import dotenv from "dotenv";
-import { clearOverlays, drawObserveOverlay } from "./utils.js";
+import {
+  clearOverlays,
+  drawObserveOverlay,
+  readCache,
+  simpleCache,
+} from "./utils.js";
 
 dotenv.config();
 
@@ -28,7 +38,15 @@ export async function main({
   stagehand: Stagehand; // Stagehand instance
 }) {
   async function actWithCache(instruction: string) {
-    // Observe the page and return the action to execute
+    // Try to get action from cache first
+    const cachedAction = await readCache(instruction);
+    if (cachedAction) {
+      console.log(chalk.blue("Using cached action for:"), instruction);
+      await page.act(cachedAction);
+      return;
+    }
+
+    // If not in cache, observe the page and cache the result
     const results = await page.observe({
       instruction,
       onlyVisible: false, // Faster/better/cheaper, but uses Chrome a11y tree so may not always target directly visible elements
@@ -36,10 +54,10 @@ export async function main({
     });
     console.log(chalk.blue("Got results:"), results);
 
-    // You can cache the playwright action to use it later with no additional LLM calls :)
+    // Cache the playwright action
     const actionToCache = results[0];
     console.log(chalk.blue("Taking cacheable action:"), actionToCache);
-
+    await simpleCache(instruction, actionToCache);
     // OPTIONAL: Draw an overlay over the relevant xpaths
     await drawObserveOverlay(page, results);
     await page.waitForTimeout(1000); // Can delete this line, just a pause to see the overlay
@@ -71,4 +89,3 @@ export async function main({
   });
   console.log(chalk.green("AI suggestion:"), text);
 }
-
