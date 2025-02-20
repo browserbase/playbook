@@ -14,7 +14,7 @@ import { Page, BrowserContext, Stagehand } from "@browserbasehq/stagehand";
 import { z } from "zod";
 import chalk from "chalk";
 import dotenv from "dotenv";
-import { actWithCache } from "./utils.js";
+import { actWithCache, drawObserveOverlay, clearOverlays } from "./utils.js";
 
 dotenv.config();
 
@@ -30,15 +30,20 @@ export async function main({
   // Navigate to the page
   await page.goto("https://docs.stagehand.dev/reference/introduction");
 
-  // You can pass a string directly to act with something like:
-  // await page.act("Click the search box")
-  // However, it's faster/cheaper/more reliable to use a cache-able approach
-  await actWithCache(page, "Click the search box");
+  // You can pass a string directly to act
+  await page.act("Click the search box");
 
-  await actWithCache(
-    page,
+  // You can use observe to plan an action before doing it
+  const results = await page.observe(
     "Type 'Tell me in one sentence why I should use Stagehand' into the search box"
   );
+  await drawObserveOverlay(page, results); // Highlight the search box
+  await page.waitForTimeout(1000);
+  await clearOverlays(page); // Remove the highlight before typing
+  await page.act(results[0]);
+
+  // You can also use the actWithCache function to speed up future workflows by skipping LLM calls!
+  // Check out the utils.ts file to see how you can cache actions
   await actWithCache(page, "Click the suggestion to use AI");
   await page.waitForTimeout(2000);
   const { text } = await page.extract({
