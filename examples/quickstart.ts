@@ -33,12 +33,13 @@ export async function main({
   // You can pass a string directly to act with something like:
   // await page.act("Click the search box")
   // However, it's faster/cheaper/more reliable to use a cache-able approach
-  await actWithCache("Click the search box");
+  await actWithCache(page, "Click the search box");
 
   await actWithCache(
+    page,
     "Type 'Tell me in one sentence why I should use Stagehand' into the search box"
   );
-  await actWithCache("Click the suggestion to use AI");
+  await actWithCache(page, "Click the suggestion to use AI");
   await page.waitForTimeout(2000);
   const { text } = await page.extract({
     instruction:
