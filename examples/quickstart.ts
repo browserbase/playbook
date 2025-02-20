@@ -37,6 +37,13 @@ export async function main({
   context: BrowserContext; // Playwright BrowserContext
   stagehand: Stagehand; // Stagehand instance
 }) {
+  /**
+   * This function is used to act with a cacheable action.
+   * It will first try to get the action from the cache.
+   * If not in cache, it will observe the page and cache the result.
+   * Then it will execute the action.
+   * @param instruction - The instruction to act with.
+   */
   async function actWithCache(instruction: string) {
     // Try to get action from cache first
     const cachedAction = await readCache(instruction);
@@ -47,11 +54,7 @@ export async function main({
     }
 
     // If not in cache, observe the page and cache the result
-    const results = await page.observe({
-      instruction,
-      onlyVisible: false, // Faster/better/cheaper, but uses Chrome a11y tree so may not always target directly visible elements
-      returnAction: true, // return the action to execute
-    });
+    const results = await page.observe(instruction);
     console.log(chalk.blue("Got results:"), results);
 
     // Cache the playwright action
@@ -67,6 +70,7 @@ export async function main({
     await page.act(actionToCache);
   }
 
+  // Navigate to the page
   await page.goto("https://docs.stagehand.dev/reference/introduction");
 
   // You can pass a string directly to act with something like:

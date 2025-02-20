@@ -9,13 +9,19 @@ This is a project that uses Stagehand, which amplifies Playwright with `act`, `e
 
 Use the following rules to write code for this project.
 
-- When executing an atomic instruction like "click the sign in button", use Stagehand `observe` to get the xpath of the element to click. Explicitly pass the following params by default:
+- To plan an instruction like "click the sign in button", use Stagehand `observe` to get the action to execute.
+
+```typescript
+const results = await page.observe("Click the sign in button");
+```
+
+You can also pass in the following params:
 
 ```typescript
 await page.observe({
   instruction: the instruction to execute,
-  onlyVisible: false, // Returns better results and less tokens, but uses Chrome a11y tree so may not always target directly visible elements
-  returnAction: true, // return the action to execute
+  onlyVisible: false, // DEFAULT: Returns better results and less tokens, but uses Chrome a11y tree so may not always target directly visible elements
+  returnAction: true, // DEFAULT: return the action to execute
 });
 ```
 
@@ -58,26 +64,36 @@ const context = stagehand.context; // Playwright BrowserContext
 You can cache the results of `observe` and use them as params for `act` like this:
 
 ```typescript
-const results = await page.observe({
-  instruction: "observe the page",
-});
+const instruction = "Click the sign in button";
+const cachedAction = await getCache(instruction);
 
-try {
-  await page.act(results[0]);
-} catch (error) {
-  await page.act({
-    action: "click the sign in button",
-  });
+if (cachedAction) {
+  await page.act(cachedAction);
+} else {
+  try {
+    const results = await page.observe(instruction);
+    await setCache(instruction, results);
+    await page.act(results[0]);
+  } catch (error) {
+    await page.act(instruction); // If the action is not cached, execute the instruction directly
+  }
 }
 ```
 
 Be sure to cache the results of `observe` and use them as params for `act` to avoid unexpected DOM changes. Using `act` without caching will result in more unpredictable behavior.
 
-Act `action` should be as atomic and specific as possible, i.e. "Click the sign in button" or "Type 'hello' into the search input". Avoid actions that are too broad, i.e. "Order me pizza" or "Send an email to Paul asking him to call me". Actions work best for Playwright code that is vulnerable to unexpected DOM changes.
+Act `action` should be as atomic and specific as possible, i.e. "Click the sign in button" or "Type 'hello' into the search input".
+AVOID actions that are more than one step, i.e. "Order me pizza" or "Send an email to Paul asking him to call me".
 
 ## Extract
 
-If you are writing code that needs to extract data from the page, use Stagehand `extract` like this:
+If you are writing code that needs to extract data from the page, use Stagehand `extract`.
+
+```typescript
+const signInButtonText = await page.extract("extract the sign in button text");
+```
+
+You can also pass in params like an output schema in Zod, and a flag to use text extraction:
 
 ```typescript
 const data = await page.extract({
@@ -97,22 +113,6 @@ const data = await page.extract({
   schema: z.object({
     text: z.array(z.string()),
   }),
+  useTextExtract: true, // Set true for larger-scale extractions (multiple paragraphs), or set false for small extractions (name, birthday, etc)
 });
 ```
-
-Set `useTextExtract` to `true` for larger-scale extractions (multiple paragraphs). Set `useTextExtract` to `false` for small extractions (name, birthday, etc).
-
-## Observe
-
-If you are writing code that needs to observe the page, use Stagehand `observe` like this:
-
-```typescript
-const data = await page.observe({
-  instruction: "click some element",
-  onlyVisible: false, // Returns better results and less tokens, but uses Chrome a11y tree so may not always target directly visible elements
-  returnAction: true, // return the action to execute
-});
-```
-
-Setting `returnAction` to `false` returns a list of XPaths and descriptions of the data you want to extract as `{ selector: string; description: string }[]`. Setting `returnAction` to `true` returns the above plus a list of actions to execute as `{ selector: string; action: string; description: string; arguments: string[], backendNodeId: number }[]`.
-
