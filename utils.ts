@@ -133,3 +133,39 @@ export async function readCache(
     return null;
   }
 }
+
+/**
+ * This function is used to act with a cacheable action.
+ * It will first try to get the action from the cache.
+ * If not in cache, it will observe the page and cache the result.
+ * Then it will execute the action.
+ * @param instruction - The instruction to act with.
+ */
+export async function actWithCache(
+  page: Page,
+  instruction: string
+): Promise<void> {
+  // Try to get action from cache first
+  const cachedAction = await readCache(instruction);
+  if (cachedAction) {
+    console.log(chalk.blue("Using cached action for:"), instruction);
+    await page.act(cachedAction);
+    return;
+  }
+
+  // If not in cache, observe the page and cache the result
+  const results = await page.observe(instruction);
+  console.log(chalk.blue("Got results:"), results);
+
+  // Cache the playwright action
+  const actionToCache = results[0];
+  console.log(chalk.blue("Taking cacheable action:"), actionToCache);
+  await simpleCache(instruction, actionToCache);
+  // OPTIONAL: Draw an overlay over the relevant xpaths
+  await drawObserveOverlay(page, results);
+  await page.waitForTimeout(1000); // Can delete this line, just a pause to see the overlay
+  await clearOverlays(page);
+
+  // Execute the action
+  await page.act(actionToCache);
+}
