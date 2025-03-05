@@ -1,41 +1,91 @@
-# 🤘 Welcome to Stagehand!
+# 🎭 Browserbase Playbook
 
-Hey! This is a project built with [Stagehand](https://github.com/browserbase/stagehand).
+A comprehensive collection of code examples for using Browserbase across different languages and automation frameworks.
 
-You can build your own web agent using: `npx create-browser-app`!
+## What is Browserbase?
 
-## Setting the Stage
+Browserbase provides cloud browser infrastructure for reliable web automation. This playbook demonstrates how to use Browserbase with various languages and frameworks to:
 
-Stagehand is an SDK for automating browsers. It's built on top of [Playwright](https://playwright.dev/) and provides a higher-level API for better debugging and AI fail-safes.
+- Run browser automation in the cloud
+- Implement stealth and anti-bot features
+- Manage browser sessions and contexts
+- Handle downloads, uploads, and screenshots
+- Configure proxies and captcha solving
 
-## Curtain Call
+## Setup Instructions
 
-Get ready for a show-stopping development experience. Just run:
+### Prerequisites
 
+- Node.js 18+ (for JavaScript/TypeScript examples)
+- Python 3.8+ (for Python examples)
+- A Browserbase account with API key and project ID ([Sign up here](https://browserbase.com/sign-up))
+
+### Installation
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/browserbase/playbook.git
+   cd playbook
+   ```
+
+2. Install dependencies for your preferred language:
+
+   **JavaScript/TypeScript:**
+   ```bash
+   npm install
+   ```
+
+   **Python:**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+
+3. Set up your environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Then edit the `.env` file with your credentials:
+   ```
+   BROWSERBASE_PROJECT_ID=your_project_id
+   BROWSERBASE_API_KEY=your_api_key
+   OPENAI_API_KEY=your_openai_key  # Optional, used for Stagehand
+   ANTHROPIC_API_KEY=your_anthropic_key  # Optional, used for Stagehand
+   ```
+
+## Running Examples
+
+Find utility functions for managing Browserbase in:
+- `node/functions.ts` (TypeScript)
+- `python/functions.py` (Python)
+
+Node.js:
 ```bash
-npm install && npm start
+npx tsx path/to/example.ts
 ```
 
-## What's Next?
-
-### Add your API keys
-
-Required API keys/environment variables are in the `.env.example` file. Copy it to `.env` and add your API keys.
-
+Python:
 ```bash
-cp .env.example .env && nano .env # Add your API keys to .env
+python path/to/example.py
 ```
 
-### Custom .cursorrules
+## Troubleshooting
 
-We have custom .cursorrules for this project. It'll help quite a bit with writing Stagehand easily.
+- **Connection Issues**: Check your API key and network connection
+- **Session Timeouts**: Configure longer timeouts or enable keep-alive
+- **Captcha Problems**: Review captcha configuration in session settings
+- **Proxy Errors**: Verify proxy settings and availability
 
-### Run on Browserbase
+For more help, visit the [Browserbase Documentation](https://docs.browserbase.com) or contact support at support@browserbase.com.
 
-To run on Browserbase, add your API keys to .env and change `env: "LOCAL"` to `env: "BROWSERBASE"` in [stagehand.config.ts](stagehand.config.ts).
+## Additional Resources
 
-### Use Anthropic Claude 3.5 Sonnet
+- [Browserbase Documentation](https://docs.browserbase.com)
+- [API Reference](https://docs.browserbase.com/reference/api)
+- [SDK Documentation](https://docs.browserbase.com/reference/sdk)
+- [Stagehand Documentation](https://docs.stagehand.dev)
 
-1. Add your API key to .env
-2. Change `modelName: "gpt-4o"` to `modelName: "claude-3-5-sonnet-latest"` in [stagehand.config.ts](stagehand.config.ts)
-3. Change `modelClientOptions: { apiKey: process.env.OPENAI_API_KEY }` to `modelClientOptions: { apiKey: process.env.ANTHROPIC_API_KEY }` in [stagehand.config.ts](stagehand.config.ts)
+
+
