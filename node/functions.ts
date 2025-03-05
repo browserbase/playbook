@@ -41,6 +41,71 @@ async function createStealthSession() {
   return session;
 }
 
+async function createSessionWithCustomProxies() {
+  const bb = new Browserbase({ apiKey: process.env.BROWSERBASE_API_KEY! });
+  const session = await bb.sessions.create({ 
+    projectId: process.env.BROWSERBASE_PROJECT_ID!,
+    proxies: [
+        {
+        "type": "external",
+        "server": "http://...",
+        "username": "user",
+        "password": "pass",
+        }
+    ]
+  });
+  return session;
+}
+
+async function createSessionWithGeoLocation() {
+  const bb = new Browserbase({ apiKey: process.env.BROWSERBASE_API_KEY! });
+  const session = await bb.sessions.create({ 
+    projectId: process.env.BROWSERBASE_PROJECT_ID!,
+    proxies: [
+        {
+        "type": "browserbase",
+        "geolocation": {
+            "city": "New York",
+            "state": "NY",
+            "country": "US"
+            }
+        }
+    ],
+  });
+  return session;
+}
+
+async function createSessionWithProxyRouting() {
+  const bb = new Browserbase({ apiKey: process.env.BROWSERBASE_API_KEY! });
+  const session = await bb.sessions.create({ 
+    projectId: process.env.BROWSERBASE_PROJECT_ID!,
+    proxies: [
+      // Use an external proxy for wikipedia.org
+      {
+        "type": "external",
+        "server": "http://...",
+        "username": "user",
+        "password": "pass",
+        "domainPattern": "wikipedia\.org"
+      },
+      // Use an external proxy for all other .gov domains
+      {
+          "type": "external",
+          "server": "http://...",
+          "username": "user",
+          "password": "pass",
+          "domainPattern": ".*\.gov"
+      },
+      // Use the Browserbase proxies for all other domains
+      // Excluding this line will not use a proxy on any other domains
+      {
+        "type": "browserbase"
+      }
+    ]
+  });
+  return session;
+}
+
 // CREATE HIGH SECURITY SESSION - No session recording and no logs
 async function createHighSecuritySession() {
   const session = await bb.sessions.create({
@@ -68,6 +133,15 @@ async function createSessionWithMetadata() {
   return session;
 }
 
+// LIST SESSIONS WITH METADATA
+async function listSessionsWithMetadata(query: string) {
+  const sessions = await bb.sessions.list({
+      q: query
+  });
+  return sessions;
+}
+// EXAMPLE: listSessionsWithMetadata("user_metadata['client']:'enterprise_customer_xyz'")
+
 // CREATE A CUSTOM CAPTCHA SESSION
 async function createCustomCaptchaSession(imageSelector: string, inputSelector: string) {
   // Create a new session
@@ -78,6 +152,17 @@ async function createCustomCaptchaSession(imageSelector: string, inputSelector: 
         captchaImageSelector: imageSelector, // should look like this: "#c_turingtestpage_ctl00_maincontent_captcha1_CaptchaImage"
         captchaInputSelector: inputSelector // should look like this: "#ctl00_MainContent_txtTuringText"
       }
+  });
+  return session;
+}
+
+// CAPTCHA SOLVING OFF
+async function createSessionWithoutCaptchaSolving() {
+  const session = await bb.sessions.create({
+    projectId: process.env.BROWSERBASE_PROJECT_ID!,
+    browserSettings: {
+      solveCaptchas: false,
+    },
   });
   return session;
 }
@@ -229,4 +314,4 @@ async function getSessionRecording(sessionId: string) {
   return data;
 }
 
-export { createSession, createStealthSession, createHighSecuritySession, createCustomCaptchaSession, createSessionWithMetadata, createContext, useContext, createSessionAllParams, getLiveDebugURL, getProjectList, getProjectUsage, getSessionDetails, getSessionLogs, getSessionRecording };
+export { createSession, createStealthSession, createHighSecuritySession, createCustomCaptchaSession, createSessionWithoutCaptchaSolving, createSessionWithMetadata, createContext, useContext, createSessionAllParams, getLiveDebugURL, getProjectList, getProjectUsage, getSessionDetails, getSessionLogs, getSessionRecording, createSessionWithCustomProxies, createSessionWithGeoLocation, createSessionWithProxyRouting };
