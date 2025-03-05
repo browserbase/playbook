@@ -77,6 +77,14 @@ def create_custom_captcha_session(image_selector, input_selector):
     )
     return session
 
+# CREATE A SESSION WITHOUT CAPTCHA SOLVING
+def create_session_without_captcha_solving():
+    session = bb.sessions.create(
+        project_id=os.environ["BROWSERBASE_PROJECT_ID"],
+        browser_settings={"solveCaptchas": False},
+    )
+    return session
+
 # CREATE A CONTEXT
 def create_context():
     import requests
