@@ -11,7 +11,6 @@ async function createSession() {
       projectId: process.env.BROWSERBASE_PROJECT_ID!,
       browserSettings: {
         advancedStealth: true,
-        // advancedStealthMouseMovement: true,
       },
       keepAlive: true,
       proxies: true,
