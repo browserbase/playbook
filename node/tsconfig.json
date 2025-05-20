@@ -12,6 +12,6 @@
     "allowImportingTsExtensions": false,
     "noEmit": false
   },
-  "include": ["*.ts", "api", "node/stagehand/examples/sdk/run.ts", "node/stagehand.config.ts", "stagehand/stagehand.config.ts"],
+  "include": ["*.ts", "api", "node/stagehand/examples/sdk/run.ts", "node/stagehand.config.ts"],
   "exclude": ["node_modules", "dist"]
 }
