@@ -2,8 +2,8 @@ import { Stagehand } from "@browserbasehq/stagehand";
 import { Browserbase } from "@browserbasehq/sdk";
 import chalk from "chalk";
 import dotenv from "dotenv";
-import { announce } from "../examples/sdk/utils.js";
 import { promises as fs } from "fs";
+import boxen from "boxen";
 
 dotenv.config();
 
@@ -24,6 +24,16 @@ const browserbase = new Browserbase({
 
 // TODO: Change this to the URL you want to login to, default is GitHub
 const URL_TO_LOGIN_TO = "https://github.com/login";
+
+function announce(message: string, title?: string) {
+  console.log(
+    boxen(message, {
+      padding: 1,
+      margin: 3,
+      title: title || "Stagehand",
+    })
+  );
+}
 
 /**
  * Creates a new session with a context ID and adds session cookies to the context
