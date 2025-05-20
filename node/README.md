@@ -15,11 +15,6 @@ playbook/node/
 │ ├── research/ 
 │ ├── complete_task/ 
 │ └── authenticate/ 
-├── puppeteer/ 
-│ ├── _tools/ 
-│ ├── research/ 
-│ ├── complete_task/ 
-│ └── authenticate/ 
 └── useful_browserbase_functions.ts # Shared utility
 ```
 
@@ -46,7 +41,7 @@ playbook/node/
 The project uses several key dependencies:
 
 - `@browserbasehq/stagehand` - For browser automation with Stagehand
-- `@playwright/test` - For Playwright-based automation
+- `@playwright-core` - For Playwright-based automation
 - `zod` - For runtime type checking
 - `dotenv` - For environment variable management
 - `chalk` - For terminal styling
