@@ -10,7 +10,7 @@ export function announce(message: string, title?: string) {
       padding: 1,
       margin: 3,
       title: title || "Stagehand",
-    })
+    }),
   );
 }
 
@@ -59,7 +59,7 @@ export async function drawObserveOverlay(page: Page, results: ObserveResult[]) {
           document,
           null,
           XPathResult.FIRST_ORDERED_NODE_TYPE,
-          null
+          null,
         ).singleNodeValue;
       } else {
         element = document.querySelector(selector);
@@ -99,7 +99,7 @@ export async function clearOverlays(page: Page) {
 
 export async function simpleCache(
   instruction: string,
-  actionToCache: ObserveResult
+  actionToCache: ObserveResult,
 ) {
   // Save action to cache.json
   try {
@@ -123,7 +123,7 @@ export async function simpleCache(
 }
 
 export async function readCache(
-  instruction: string
+  instruction: string,
 ): Promise<ObserveResult | null> {
   try {
     const existingCache = await fs.readFile("cache.json", "utf-8");
@@ -143,7 +143,7 @@ export async function readCache(
  */
 export async function actWithCache(
   page: Page,
-  instruction: string
+  instruction: string,
 ): Promise<void> {
   // Try to get action from cache first
   const cachedAction = await readCache(instruction);

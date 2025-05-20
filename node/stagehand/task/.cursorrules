@@ -9,31 +9,25 @@ This is a project that uses Stagehand, which amplifies Playwright with `act`, `e
 
 Use the following rules to write code for this project.
 
-- To plan an instruction like "click the sign in button", use Stagehand `observe` to get the action to execute.
+- To take an action on the page like "click the sign in button", use Stagehand `act` like this:
 
 ```typescript
-const results = await page.observe("Click the sign in button");
+await page.act("Click the sign in button");
 ```
 
-You can also pass in the following params:
+- To plan an instruction before taking an action, use Stagehand `observe` to get the action to execute.
 
 ```typescript
-await page.observe({
-  instruction: the instruction to execute,
-  onlyVisible: false, // DEFAULT: Returns better results and less tokens, but uses Chrome a11y tree so may not always target directly visible elements
-  returnAction: true, // DEFAULT: return the action to execute
-});
+const [action] = await page.observe("Click the sign in button");
 ```
 
 - The result of `observe` is an array of `ObserveResult` objects that can directly be used as params for `act` like this:
+
   ```typescript
-  const results = await page.observe({
-    instruction: the instruction to execute,
-    onlyVisible: false, // Returns better results and less tokens, but uses Chrome a11y tree so may not always target directly visible elements
-    returnAction: true, // return the action to execute
-  });
-  await page.act(results[0]);
+  const [action] = await page.observe("Click the sign in button");
+  await page.act(action);
   ```
+
 - When writing code that needs to extract data from the page, use Stagehand `extract`. Explicitly pass the following params by default:
 
 ```typescript
@@ -42,7 +36,6 @@ const { someValue } = await page.extract({
   schema: z.object({
     someValue: z.string(),
   }), // The schema to extract
-  useTextExtract: true, // Set true for better results on larger extractions (sentences, paragraphs, etc), or set false for small extractions (name, birthday, etc)
 });
 ```
 
@@ -83,7 +76,7 @@ if (cachedAction) {
 Be sure to cache the results of `observe` and use them as params for `act` to avoid unexpected DOM changes. Using `act` without caching will result in more unpredictable behavior.
 
 Act `action` should be as atomic and specific as possible, i.e. "Click the sign in button" or "Type 'hello' into the search input".
-AVOID actions that are more than one step, i.e. "Order me pizza" or "Send an email to Paul asking him to call me".
+AVOID actions that are more than one step, i.e. "Order me pizza" or "Type in the search bar and hit enter".
 
 ## Extract
 
@@ -101,7 +94,6 @@ const data = await page.extract({
   schema: z.object({
     text: z.string(),
   }),
-  useTextExtract: true, // Set true for larger-scale extractions (multiple paragraphs), or set false for small extractions (name, birthday, etc)
 });
 ```
 
@@ -115,4 +107,34 @@ const data = await page.extract({
   }),
   useTextExtract: true, // Set true for larger-scale extractions (multiple paragraphs), or set false for small extractions (name, birthday, etc)
 });
+```
+
+## Agent
+
+Use the `agent` method to automonously execute larger tasks like "Get the stock price of NVDA"
+
+```typescript
+// Navigate to a website
+await stagehand.page.goto("https://www.google.com");
+
+const agent = stagehand.agent({
+  // You can use either OpenAI or Anthropic
+  provider: "openai",
+  // The model to use (claude-3-7-sonnet-20250219 or claude-3-5-sonnet-20240620 for Anthropic)
+  model: "computer-use-preview",
+
+  // Customize the system prompt
+  instructions: `You are a helpful assistant that can use a web browser.
+	Do not ask follow up questions, the user will trust your judgement.`,
+
+  // Customize the API key
+  options: {
+    apiKey: process.env.OPENAI_API_KEY,
+  },
+});
+
+// Execute the agent
+await agent.execute(
+  "Apply for a library card at the San Francisco Public Library"
+);
 ```

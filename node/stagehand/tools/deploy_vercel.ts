@@ -20,7 +20,7 @@ import { Page, BrowserContext, Stagehand } from "@browserbasehq/stagehand";
 import { z } from "zod";
 import dotenv from "dotenv";
 import chalk from "chalk";
-import { getEnvVar } from "./utils.js";
+import { getEnvVar } from "../examples/sdk/utils.js";
 
 dotenv.config();
 
