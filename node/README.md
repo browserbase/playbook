@@ -41,11 +41,6 @@ playbook/node/
    npm install
    ```
 
-## Available Scripts
-
-- `npm start` - Run the main application
-- `npm run build` - Build TypeScript files
-
 ## Dependencies
 
 The project uses several key dependencies:
