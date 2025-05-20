@@ -25,8 +25,22 @@ async function main() {
 			}
 		)
 	);
+	await page.goto("https://phila.legistar.com/");
+	
+	await page.act({action: "click calendar from the navigation menu"})
+	await page.act({action: "select 2025 from the month dropdown"})
 
-    // Navigate to the page + take some action
+	const results = await page.extract({
+	  instruction: "Extract the table with the name, date and time of the events",
+	  schema: z.object({
+		results: z.array(z.object({
+		  name: z.string(),
+		  date: z.string(),
+		  time: z.string(),
+		})),
+	  })
+	});
+	console.log(results);
 
     // Close the stagehand instance
 	await stagehand.close();

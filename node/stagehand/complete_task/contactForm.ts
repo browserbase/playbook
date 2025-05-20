@@ -27,6 +27,18 @@ async function main() {
 	);
 
     // Navigate to the page + take some action
+	await page.goto('https://www.browserbase.com/contact');
+	const contact_page = await page.observe({ instruction: "What are the fields can be filled in?" });
+	console.log(contact_page);
+	await page.act({action: "Fill in the fields with name: %name% email: %email% phone: %phone% message: %message%",
+	  variables: {
+		name: "John Doe",
+		email: "john.doe@example.com",
+		phone: "1234567890",
+		message: "Hello, I am interested in your services."
+	  }
+	});
+	await page.waitForTimeout(3000);
 
     // Close the stagehand instance
 	await stagehand.close();
