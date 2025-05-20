@@ -1,3 +1,26 @@
+'''
+Browserbase Python SDK Examples
+
+This file demonstrates how to use Browserbase's Python SDK to:
+- Create and manage browser sessions
+- Configure stealth and anti-bot features
+- Set up proxies and fingerprinting
+- Handle contexts and metadata
+- Monitor and debug sessions
+
+Setup Instructions:
+1. Set up environment variables in .env:
+   BROWSERBASE_PROJECT_ID=your_project_id
+   BROWSERBASE_API_KEY=your_api_key
+
+2. Install dependencies:
+   pip install browserbase requests python-dotenv
+
+3. Import functions in your scripts:
+   from core_utils import *
+
+See function documentation below for detailed configuration options.
+'''
 import os
 import requests
 from browserbase import Browserbase

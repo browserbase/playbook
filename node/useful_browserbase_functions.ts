@@ -1,3 +1,28 @@
+/**
+ * Browserbase Node.js/TypeScript Examples
+ * 
+ * This file demonstrates how to use Browserbase's Node.js SDK to:
+ * - Create and manage browser sessions
+ * - Configure stealth and anti-bot features
+ * - Set up proxies and fingerprinting
+ * - Handle contexts and metadata
+ * 
+ * TO RUN:
+ * 1. Set up environment variables in .env:
+ *    BROWSERBASE_PROJECT_ID=your_project_id
+ *    BROWSERBASE_API_KEY=your_api_key
+ * 
+ * 2. Install dependencies:
+ *    npm install
+ * 
+ * 3. You can call to these functions directly from other scripts by adding:
+ * import { createSession} from ./core_utils.ts
+ * 
+ * 
+ * Each function shows a different aspect of session configuration.
+ * Uncomment and modify parameters as needed for your use case.
+ */
+
 import { Browserbase } from "@browserbasehq/sdk";
 import axios from "axios";
 
