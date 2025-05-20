@@ -3,12 +3,12 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "tsx index.ts",
+    "start": "node --no-deprecation $(which tsx) index.ts",
     "postinstall": "playwright install"
   },
   "dependencies": {
     "@browserbasehq/sdk": "latest",
-    "@browserbasehq/stagehand": "latest",
+    "@browserbasehq/stagehand": "^2.2.1",
     "@playwright/test": "^1.49.1",
     "axios": "^1.8.1",
     "boxen": "^8.0.1",
