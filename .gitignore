@@ -1,3 +1,10 @@
-node_modules/
-examples/node_modules/
-guides/node_modules/
+.env
+node_modules
+tmp
+downloads
+.DS_Store
+dist
+cache.json
+python/venv/
+*.node_modules
+package-lock.json
