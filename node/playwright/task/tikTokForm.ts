@@ -1,10 +1,3 @@
-/**
- * 
- * Run using 
- * npx tsx adv_stealth_ex.ts
- * 
-**/
-
 import { chromium } from "playwright-core";
 import Browserbase from "@browserbasehq/sdk/index.mjs";
 import * as dotenv from 'dotenv';
