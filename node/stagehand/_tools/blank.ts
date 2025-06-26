@@ -28,6 +28,10 @@ async function main() {
 
     // Navigate to the page + take some action
 
+
+	
+
+
     // Close the stagehand instance
 	await stagehand.close();
 }
